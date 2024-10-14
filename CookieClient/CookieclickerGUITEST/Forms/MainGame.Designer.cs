@@ -1,4 +1,4 @@
-﻿namespace CookieclickerGUITEST
+namespace CookieclickerGUITEST
 {
     partial class MainGame
     {
@@ -41,6 +41,13 @@
             this.MineButton = new System.Windows.Forms.Button();
             this.FactoryButton = new System.Windows.Forms.Button();
             this.WizardButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.GrandmaLabel = new System.Windows.Forms.Label();
+            this.FarmLabel = new System.Windows.Forms.Label();
+            this.MineLabel = new System.Windows.Forms.Label();
+            this.FactoryLabel = new System.Windows.Forms.Label();
+            this.WizardTowerLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -182,6 +189,73 @@
             this.WizardButton.UseVisualStyleBackColor = true;
             this.WizardButton.Click += new System.EventHandler(this.WizardButton_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(683, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(295, 38);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Players Connected";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(714, 141);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(237, 22);
+            this.textBox1.TabIndex = 11;
+            // 
+            // GrandmaLabel
+            // 
+            this.GrandmaLabel.AutoSize = true;
+            this.GrandmaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.GrandmaLabel.Location = new System.Drawing.Point(1153, 141);
+            this.GrandmaLabel.Name = "GrandmaLabel";
+            this.GrandmaLabel.Size = new System.Drawing.Size(36, 39);
+            this.GrandmaLabel.TabIndex = 12;
+            this.GrandmaLabel.Text = "0";
+            // 
+            // FarmLabel
+            // 
+            this.FarmLabel.AutoSize = true;
+            this.FarmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.FarmLabel.Location = new System.Drawing.Point(1153, 255);
+            this.FarmLabel.Name = "FarmLabel";
+            this.FarmLabel.Size = new System.Drawing.Size(36, 39);
+            this.FarmLabel.TabIndex = 13;
+            this.FarmLabel.Text = "0";
+            // 
+            // MineLabel
+            // 
+            this.MineLabel.AutoSize = true;
+            this.MineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.MineLabel.Location = new System.Drawing.Point(1153, 384);
+            this.MineLabel.Name = "MineLabel";
+            this.MineLabel.Size = new System.Drawing.Size(36, 39);
+            this.MineLabel.TabIndex = 14;
+            this.MineLabel.Text = "0";
+            // 
+            // FactoryLabel
+            // 
+            this.FactoryLabel.AutoSize = true;
+            this.FactoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.FactoryLabel.Location = new System.Drawing.Point(1153, 520);
+            this.FactoryLabel.Name = "FactoryLabel";
+            this.FactoryLabel.Size = new System.Drawing.Size(36, 39);
+            this.FactoryLabel.TabIndex = 15;
+            this.FactoryLabel.Text = "0";
+            // 
+            // WizardTowerLabel
+            // 
+            this.WizardTowerLabel.AutoSize = true;
+            this.WizardTowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.WizardTowerLabel.Location = new System.Drawing.Point(1153, 656);
+            this.WizardTowerLabel.Name = "WizardTowerLabel";
+            this.WizardTowerLabel.Size = new System.Drawing.Size(36, 39);
+            this.WizardTowerLabel.TabIndex = 16;
+            this.WizardTowerLabel.Text = "0";
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +297,13 @@
         private System.Windows.Forms.Button MineButton;
         private System.Windows.Forms.Button FactoryButton;
         private System.Windows.Forms.Button WizardButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label GrandmaLabel;
+        private System.Windows.Forms.Label FarmLabel;
+        private System.Windows.Forms.Label MineLabel;
+        private System.Windows.Forms.Label FactoryLabel;
+        private System.Windows.Forms.Label WizardTowerLabel;
     }
 }
 

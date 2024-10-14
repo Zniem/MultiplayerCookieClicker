@@ -1,4 +1,4 @@
-﻿using CookieclickerGUITEST.Forms;
+using CookieclickerGUITEST.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,16 +26,42 @@ namespace CookieclickerGUITEST
         {
             
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = (10); // 10 seconds in milliseconds
+            timer.Interval = (10); 
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            label1.Text = "" + Program.ReadTextMessage(Program.client);
+            String msg = "";
+            if ((msg = Program.ReadTextMessage(client)).Contains("Cookies")) { 
+                label1.Text = msg;
+            } 
+            else if (msg.Contains("Grandmas"))
+            {
+                GrandmaLabel.Text = msg;
+            }
+            else if (msg.Contains("Farm"))
+            {
+                FarmLabel.Text = msg;
+            }
+            else if (msg.Contains("Mine"))
+            {
+                MineLabel.Text = msg;
+            }
+            else if (msg.Contains("Factory"))
+            {
+                FactoryLabel.Text = msg;
+            }
+            else if (msg.Contains("Wizard"))
+            {
+                WizardTowerLabel.Text = msg;
+            }
+
+
+
         }
-        
-        
+
+
 
         private void achievementsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -49,7 +75,8 @@ namespace CookieclickerGUITEST
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Program.WriteTextMessage(Program.client, "test");
+            Program.WriteTextMessage(client, "COOKIE");
+
         }
 
         private void messagesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,32 +86,27 @@ namespace CookieclickerGUITEST
 
         private void GrandmaButton_Click(object sender, EventArgs e)
         {
-
+            Program.WriteTextMessage(client, "GRANDMA");
         }
 
         private void FarmButton_Click(object sender, EventArgs e)
         {
-
+            Program.WriteTextMessage(client, "FARM");
         }
 
         private void MineButton_Click(object sender, EventArgs e)
         {
-
+            Program.WriteTextMessage(client, "MINE");
         }
 
         private void FactoryButton_Click(object sender, EventArgs e)
         {
-
+            Program.WriteTextMessage(client, "FACTORY");
         }
 
         private void WizardButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+            Program.WriteTextMessage(client, "WIZZARD");
+        }       
     }
 }

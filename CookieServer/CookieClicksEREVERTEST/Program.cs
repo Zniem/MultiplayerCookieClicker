@@ -36,7 +36,12 @@ namespace Test
             bool done = false;
             while (!done)
             {               
-                WriteTextMessage(client, "" + c); 
+                WriteTextMessage(client, "Cookies: " + c);
+                WriteTextMessage(client, "Grandmas:" + c.GRANDMA);
+                WriteTextMessage(client, "Farm:" + c.FARM);
+                WriteTextMessage(client, "Mine:" + c.MINE);
+                WriteTextMessage(client, "Factory:" + c.FACTORY);
+                WriteTextMessage(client, "Wizard:" + c.WIZARDTOWER);
                 Console.WriteLine("message send" + c);
                 Thread.Sleep(10);
                 
@@ -50,12 +55,36 @@ namespace Test
             while (!done)
             {
                 string msg = ReadTextMessage(client);
-                if (msg == "test")
+                if (msg == "COOKIE")
                 {
                     c.addcookies();
                     Console.WriteLine("cookies added");
                 }
-               
+                else if (msg == "GRANDMA") {
+                    c.addGrandma();
+                    Console.WriteLine("GRANDMA added");
+                }
+                else if (msg == "FARM")
+                {
+                    c.addFarm();
+                    Console.WriteLine("FARM added");
+                }
+                else if (msg == "MINE")
+                {
+                    c.addMine();
+                    Console.WriteLine("MINE added");
+                }
+                else if (msg == "FACTORY")
+                {
+                    c.addFactory();
+                    Console.WriteLine("FACTORY added");
+                }
+                else if (msg == "WIZZARD")
+                {
+                    c.addWizzardTower();
+                    Console.WriteLine("WIZZARD added");
+                }
+
             }
         }
 
