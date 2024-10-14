@@ -15,7 +15,7 @@ namespace CookieclickerGUITEST
 {
     public partial class MainGame : Form
     {
-        TcpClient client = new TcpClient("145.49.17.96", 1330);
+        
 
         public MainGame()
         {
@@ -32,7 +32,7 @@ namespace CookieclickerGUITEST
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            label1.Text = "" + Program.ReadTextMessage(client);
+            label1.Text = "" + Program.ReadTextMessage(Program.client);
         }
         
         
@@ -49,7 +49,7 @@ namespace CookieclickerGUITEST
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Program.WriteTextMessage(client, "test");
+            Program.WriteTextMessage(Program.client, "test");
         }
 
         private void messagesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +78,11 @@ namespace CookieclickerGUITEST
         }
 
         private void WizardButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

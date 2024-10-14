@@ -11,6 +11,7 @@ namespace CookieclickerGUITEST
 {
     internal static class Program
     {
+        public static TcpClient client { get; set; } = new TcpClient("145.49.17.96", 1330);
         //Start GUI
         [STAThread]
         static void Main()
@@ -20,7 +21,6 @@ namespace CookieclickerGUITEST
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TitleScreen());
 
-           
         }
         public static void WriteTextMessage(TcpClient client, string message)
         {

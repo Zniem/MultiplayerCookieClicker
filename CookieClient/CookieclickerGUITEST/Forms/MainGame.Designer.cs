@@ -49,11 +49,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 38);
+            this.label1.Location = new System.Drawing.Point(107, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 95);
+            this.label1.Size = new System.Drawing.Size(273, 76);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cookies";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
@@ -65,43 +67,45 @@
             this.leaderboardsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1557, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1168, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cookieToolStripMenuItem
             // 
             this.cookieToolStripMenuItem.Name = "cookieToolStripMenuItem";
-            this.cookieToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.cookieToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.cookieToolStripMenuItem.Text = "Cookie";
             // 
             // achievementsToolStripMenuItem
             // 
             this.achievementsToolStripMenuItem.Name = "achievementsToolStripMenuItem";
-            this.achievementsToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.achievementsToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.achievementsToolStripMenuItem.Text = "Achievements";
             this.achievementsToolStripMenuItem.Click += new System.EventHandler(this.achievementsToolStripMenuItem_Click);
             // 
             // messagesToolStripMenuItem
             // 
             this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
-            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.messagesToolStripMenuItem.Text = "Messages";
             this.messagesToolStripMenuItem.Click += new System.EventHandler(this.messagesToolStripMenuItem_Click);
             // 
             // leaderboardsToolStripMenuItem
             // 
             this.leaderboardsToolStripMenuItem.Name = "leaderboardsToolStripMenuItem";
-            this.leaderboardsToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.leaderboardsToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.leaderboardsToolStripMenuItem.Text = "Leaderboards";
             this.leaderboardsToolStripMenuItem.Click += new System.EventHandler(this.leaderboardsToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CookieclickerGUITEST.Properties.Resources.Cookie_clonkker;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 155);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 126);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(541, 485);
+            this.pictureBox1.Size = new System.Drawing.Size(406, 394);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -111,18 +115,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.label2.Location = new System.Drawing.Point(1116, 40);
+            this.label2.Location = new System.Drawing.Point(837, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(406, 95);
+            this.label2.Size = new System.Drawing.Size(321, 76);
             this.label2.TabIndex = 4;
             this.label2.Text = "Upgrades";
             // 
             // GrandmaButton
             // 
             this.GrandmaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.GrandmaButton.Location = new System.Drawing.Point(1132, 155);
+            this.GrandmaButton.Location = new System.Drawing.Point(849, 126);
+            this.GrandmaButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GrandmaButton.Name = "GrandmaButton";
-            this.GrandmaButton.Size = new System.Drawing.Size(360, 62);
+            this.GrandmaButton.Size = new System.Drawing.Size(270, 50);
             this.GrandmaButton.TabIndex = 5;
             this.GrandmaButton.Text = "Grandma";
             this.GrandmaButton.UseVisualStyleBackColor = true;
@@ -131,9 +137,10 @@
             // FarmButton
             // 
             this.FarmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.FarmButton.Location = new System.Drawing.Point(1132, 253);
+            this.FarmButton.Location = new System.Drawing.Point(849, 206);
+            this.FarmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FarmButton.Name = "FarmButton";
-            this.FarmButton.Size = new System.Drawing.Size(360, 62);
+            this.FarmButton.Size = new System.Drawing.Size(270, 50);
             this.FarmButton.TabIndex = 6;
             this.FarmButton.Text = "Farm";
             this.FarmButton.UseVisualStyleBackColor = true;
@@ -142,9 +149,10 @@
             // MineButton
             // 
             this.MineButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.MineButton.Location = new System.Drawing.Point(1132, 344);
+            this.MineButton.Location = new System.Drawing.Point(849, 280);
+            this.MineButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MineButton.Name = "MineButton";
-            this.MineButton.Size = new System.Drawing.Size(360, 62);
+            this.MineButton.Size = new System.Drawing.Size(270, 50);
             this.MineButton.TabIndex = 7;
             this.MineButton.Text = "Mine";
             this.MineButton.UseVisualStyleBackColor = true;
@@ -153,9 +161,10 @@
             // FactoryButton
             // 
             this.FactoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.FactoryButton.Location = new System.Drawing.Point(1132, 438);
+            this.FactoryButton.Location = new System.Drawing.Point(849, 356);
+            this.FactoryButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FactoryButton.Name = "FactoryButton";
-            this.FactoryButton.Size = new System.Drawing.Size(360, 62);
+            this.FactoryButton.Size = new System.Drawing.Size(270, 50);
             this.FactoryButton.TabIndex = 8;
             this.FactoryButton.Text = "Factory";
             this.FactoryButton.UseVisualStyleBackColor = true;
@@ -164,9 +173,10 @@
             // WizardButton
             // 
             this.WizardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.WizardButton.Location = new System.Drawing.Point(1132, 537);
+            this.WizardButton.Location = new System.Drawing.Point(849, 436);
+            this.WizardButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WizardButton.Name = "WizardButton";
-            this.WizardButton.Size = new System.Drawing.Size(360, 62);
+            this.WizardButton.Size = new System.Drawing.Size(270, 50);
             this.WizardButton.TabIndex = 9;
             this.WizardButton.Text = "Wizard Tower";
             this.WizardButton.UseVisualStyleBackColor = true;
@@ -174,9 +184,9 @@
             // 
             // MainGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1557, 804);
+            this.ClientSize = new System.Drawing.Size(1168, 653);
             this.Controls.Add(this.WizardButton);
             this.Controls.Add(this.FactoryButton);
             this.Controls.Add(this.MineButton);
@@ -187,6 +197,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainGame";
             this.Text = "Cookie Clicker";
             this.Load += new System.EventHandler(this.Form1_Load);
