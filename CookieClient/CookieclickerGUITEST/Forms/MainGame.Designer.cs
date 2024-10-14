@@ -55,14 +55,12 @@ namespace CookieclickerGUITEST
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(139, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 76);
+            this.label1.Size = new System.Drawing.Size(309, 94);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Cookies";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Cookie";
             // 
             // menuStrip1
             // 
@@ -121,19 +119,17 @@ namespace CookieclickerGUITEST
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.label2.Location = new System.Drawing.Point(837, 32);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1116, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(321, 76);
+            this.label2.Size = new System.Drawing.Size(385, 94);
             this.label2.TabIndex = 4;
             this.label2.Text = "Upgrades";
             // 
             // GrandmaButton
             // 
-            this.GrandmaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.GrandmaButton.Location = new System.Drawing.Point(849, 126);
-            this.GrandmaButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GrandmaButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrandmaButton.Location = new System.Drawing.Point(1132, 188);
             this.GrandmaButton.Name = "GrandmaButton";
             this.GrandmaButton.Size = new System.Drawing.Size(270, 50);
             this.GrandmaButton.TabIndex = 5;
@@ -143,9 +139,8 @@ namespace CookieclickerGUITEST
             // 
             // FarmButton
             // 
-            this.FarmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.FarmButton.Location = new System.Drawing.Point(849, 206);
-            this.FarmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FarmButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FarmButton.Location = new System.Drawing.Point(1132, 297);
             this.FarmButton.Name = "FarmButton";
             this.FarmButton.Size = new System.Drawing.Size(270, 50);
             this.FarmButton.TabIndex = 6;
@@ -155,9 +150,8 @@ namespace CookieclickerGUITEST
             // 
             // MineButton
             // 
-            this.MineButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.MineButton.Location = new System.Drawing.Point(849, 280);
-            this.MineButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MineButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MineButton.Location = new System.Drawing.Point(1132, 426);
             this.MineButton.Name = "MineButton";
             this.MineButton.Size = new System.Drawing.Size(270, 50);
             this.MineButton.TabIndex = 7;
@@ -167,9 +161,8 @@ namespace CookieclickerGUITEST
             // 
             // FactoryButton
             // 
-            this.FactoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.FactoryButton.Location = new System.Drawing.Point(849, 356);
-            this.FactoryButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FactoryButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FactoryButton.Location = new System.Drawing.Point(1132, 562);
             this.FactoryButton.Name = "FactoryButton";
             this.FactoryButton.Size = new System.Drawing.Size(270, 50);
             this.FactoryButton.TabIndex = 8;
@@ -179,9 +172,8 @@ namespace CookieclickerGUITEST
             // 
             // WizardButton
             // 
-            this.WizardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.WizardButton.Location = new System.Drawing.Point(849, 436);
-            this.WizardButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WizardButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WizardButton.Location = new System.Drawing.Point(1132, 698);
             this.WizardButton.Name = "WizardButton";
             this.WizardButton.Size = new System.Drawing.Size(270, 50);
             this.WizardButton.TabIndex = 9;
@@ -260,7 +252,14 @@ namespace CookieclickerGUITEST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 653);
+            this.ClientSize = new System.Drawing.Size(1557, 804);
+            this.Controls.Add(this.WizardTowerLabel);
+            this.Controls.Add(this.FactoryLabel);
+            this.Controls.Add(this.MineLabel);
+            this.Controls.Add(this.FarmLabel);
+            this.Controls.Add(this.GrandmaLabel);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.WizardButton);
             this.Controls.Add(this.FactoryButton);
             this.Controls.Add(this.MineButton);
