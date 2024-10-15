@@ -40,17 +40,17 @@ namespace CookieclickerGUITEST
             this.FarmButton = new System.Windows.Forms.Button();
             this.MineButton = new System.Windows.Forms.Button();
             this.FactoryButton = new System.Windows.Forms.Button();
-            this.WizardButton = new System.Windows.Forms.Button();
+            this.BankButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.GrandmaLabel = new System.Windows.Forms.Label();
             this.FarmLabel = new System.Windows.Forms.Label();
             this.MineLabel = new System.Windows.Forms.Label();
             this.FactoryLabel = new System.Windows.Forms.Label();
-            this.WizardTowerLabel = new System.Windows.Forms.Label();
+            this.BankLabel = new System.Windows.Forms.Label();
             this.FingerButton = new System.Windows.Forms.Button();
             this.FingerLabel = new System.Windows.Forms.Label();
             this.CPSLabel = new System.Windows.Forms.Label();
+            this.PlayerLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,34 +77,34 @@ namespace CookieclickerGUITEST
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(2226, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(2226, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cookieToolStripMenuItem
             // 
             this.cookieToolStripMenuItem.Name = "cookieToolStripMenuItem";
-            this.cookieToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.cookieToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
             this.cookieToolStripMenuItem.Text = "Cookie";
             // 
             // achievementsToolStripMenuItem
             // 
             this.achievementsToolStripMenuItem.Name = "achievementsToolStripMenuItem";
-            this.achievementsToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.achievementsToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
             this.achievementsToolStripMenuItem.Text = "Achievements";
             this.achievementsToolStripMenuItem.Click += new System.EventHandler(this.achievementsToolStripMenuItem_Click);
             // 
             // messagesToolStripMenuItem
             // 
             this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
-            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
             this.messagesToolStripMenuItem.Text = "Messages";
             this.messagesToolStripMenuItem.Click += new System.EventHandler(this.messagesToolStripMenuItem_Click);
             // 
             // leaderboardsToolStripMenuItem
             // 
             this.leaderboardsToolStripMenuItem.Name = "leaderboardsToolStripMenuItem";
-            this.leaderboardsToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.leaderboardsToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.leaderboardsToolStripMenuItem.Text = "Leaderboards";
             this.leaderboardsToolStripMenuItem.Click += new System.EventHandler(this.leaderboardsToolStripMenuItem_Click);
             // 
@@ -179,17 +179,17 @@ namespace CookieclickerGUITEST
             this.FactoryButton.UseVisualStyleBackColor = true;
             this.FactoryButton.Click += new System.EventHandler(this.FactoryButton_Click);
             // 
-            // WizardButton
+            // BankButton
             // 
-            this.WizardButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WizardButton.Location = new System.Drawing.Point(1509, 1000);
-            this.WizardButton.Margin = new System.Windows.Forms.Padding(4);
-            this.WizardButton.Name = "WizardButton";
-            this.WizardButton.Size = new System.Drawing.Size(360, 62);
-            this.WizardButton.TabIndex = 9;
-            this.WizardButton.Text = "Wizard Tower";
-            this.WizardButton.UseVisualStyleBackColor = true;
-            this.WizardButton.Click += new System.EventHandler(this.WizardButton_Click);
+            this.BankButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BankButton.Location = new System.Drawing.Point(1509, 1000);
+            this.BankButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BankButton.Name = "BankButton";
+            this.BankButton.Size = new System.Drawing.Size(360, 62);
+            this.BankButton.TabIndex = 9;
+            this.BankButton.Text = "Bank";
+            this.BankButton.UseVisualStyleBackColor = true;
+            this.BankButton.Click += new System.EventHandler(this.BankButton_Click);
             // 
             // label3
             // 
@@ -202,14 +202,6 @@ namespace CookieclickerGUITEST
             this.label3.TabIndex = 10;
             this.label3.Text = "Players Connected";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(918, 189);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 22);
-            this.textBox1.TabIndex = 11;
-            // 
             // GrandmaLabel
             // 
             this.GrandmaLabel.AutoSize = true;
@@ -217,7 +209,7 @@ namespace CookieclickerGUITEST
             this.GrandmaLabel.Location = new System.Drawing.Point(1537, 319);
             this.GrandmaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GrandmaLabel.Name = "GrandmaLabel";
-            this.GrandmaLabel.Size = new System.Drawing.Size(36, 39);
+            this.GrandmaLabel.Size = new System.Drawing.Size(36, 38);
             this.GrandmaLabel.TabIndex = 12;
             this.GrandmaLabel.Text = "0";
             // 
@@ -228,7 +220,7 @@ namespace CookieclickerGUITEST
             this.FarmLabel.Location = new System.Drawing.Point(1537, 491);
             this.FarmLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FarmLabel.Name = "FarmLabel";
-            this.FarmLabel.Size = new System.Drawing.Size(36, 39);
+            this.FarmLabel.Size = new System.Drawing.Size(36, 38);
             this.FarmLabel.TabIndex = 13;
             this.FarmLabel.Text = "0";
             // 
@@ -239,7 +231,7 @@ namespace CookieclickerGUITEST
             this.MineLabel.Location = new System.Drawing.Point(1537, 645);
             this.MineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MineLabel.Name = "MineLabel";
-            this.MineLabel.Size = new System.Drawing.Size(36, 39);
+            this.MineLabel.Size = new System.Drawing.Size(36, 38);
             this.MineLabel.TabIndex = 14;
             this.MineLabel.Text = "0";
             // 
@@ -250,20 +242,20 @@ namespace CookieclickerGUITEST
             this.FactoryLabel.Location = new System.Drawing.Point(1537, 794);
             this.FactoryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FactoryLabel.Name = "FactoryLabel";
-            this.FactoryLabel.Size = new System.Drawing.Size(36, 39);
+            this.FactoryLabel.Size = new System.Drawing.Size(36, 38);
             this.FactoryLabel.TabIndex = 15;
             this.FactoryLabel.Text = "0";
             // 
-            // WizardTowerLabel
+            // BankLabel
             // 
-            this.WizardTowerLabel.AutoSize = true;
-            this.WizardTowerLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WizardTowerLabel.Location = new System.Drawing.Point(1537, 945);
-            this.WizardTowerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.WizardTowerLabel.Name = "WizardTowerLabel";
-            this.WizardTowerLabel.Size = new System.Drawing.Size(36, 39);
-            this.WizardTowerLabel.TabIndex = 16;
-            this.WizardTowerLabel.Text = "0";
+            this.BankLabel.AutoSize = true;
+            this.BankLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BankLabel.Location = new System.Drawing.Point(1537, 945);
+            this.BankLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BankLabel.Name = "BankLabel";
+            this.BankLabel.Size = new System.Drawing.Size(36, 38);
+            this.BankLabel.TabIndex = 16;
+            this.BankLabel.Text = "0";
             // 
             // FingerButton
             // 
@@ -284,7 +276,7 @@ namespace CookieclickerGUITEST
             this.FingerLabel.Location = new System.Drawing.Point(1537, 174);
             this.FingerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FingerLabel.Name = "FingerLabel";
-            this.FingerLabel.Size = new System.Drawing.Size(36, 39);
+            this.FingerLabel.Size = new System.Drawing.Size(36, 38);
             this.FingerLabel.TabIndex = 18;
             this.FingerLabel.Text = "0";
             // 
@@ -298,22 +290,32 @@ namespace CookieclickerGUITEST
             this.CPSLabel.TabIndex = 19;
             this.CPSLabel.Text = "label4";
             // 
+            // PlayerLabel
+            // 
+            this.PlayerLabel.AutoSize = true;
+            this.PlayerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.PlayerLabel.Location = new System.Drawing.Point(918, 163);
+            this.PlayerLabel.Name = "PlayerLabel";
+            this.PlayerLabel.Size = new System.Drawing.Size(109, 39);
+            this.PlayerLabel.TabIndex = 20;
+            this.PlayerLabel.Text = "label4";
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2226, 1090);
+            this.Controls.Add(this.PlayerLabel);
             this.Controls.Add(this.CPSLabel);
             this.Controls.Add(this.FingerLabel);
             this.Controls.Add(this.FingerButton);
-            this.Controls.Add(this.WizardTowerLabel);
+            this.Controls.Add(this.BankLabel);
             this.Controls.Add(this.FactoryLabel);
             this.Controls.Add(this.MineLabel);
             this.Controls.Add(this.FarmLabel);
             this.Controls.Add(this.GrandmaLabel);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.WizardButton);
+            this.Controls.Add(this.BankButton);
             this.Controls.Add(this.FactoryButton);
             this.Controls.Add(this.MineButton);
             this.Controls.Add(this.FarmButton);
@@ -348,17 +350,17 @@ namespace CookieclickerGUITEST
         private System.Windows.Forms.Button FarmButton;
         private System.Windows.Forms.Button MineButton;
         private System.Windows.Forms.Button FactoryButton;
-        private System.Windows.Forms.Button WizardButton;
+        private System.Windows.Forms.Button BankButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label GrandmaLabel;
         private System.Windows.Forms.Label FarmLabel;
         private System.Windows.Forms.Label MineLabel;
         private System.Windows.Forms.Label FactoryLabel;
-        private System.Windows.Forms.Label WizardTowerLabel;
+        private System.Windows.Forms.Label BankLabel;
         private System.Windows.Forms.Button FingerButton;
         private System.Windows.Forms.Label FingerLabel;
         private System.Windows.Forms.Label CPSLabel;
+        private System.Windows.Forms.Label PlayerLabel;
     }
 }
 

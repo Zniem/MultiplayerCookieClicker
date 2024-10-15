@@ -17,11 +17,11 @@ namespace CookieCount
         public int FARM { get; set; }
         public double FARMPRICE { get; set; } = 1100;
         public int MINE { get; set; }
-        public double MINEPRICE { get; set; } = 150;
+        public double MINEPRICE { get; set; } = 12000;
         public int FACTORY { get; set; }
-        public double FACTORYPRICE { get; set; } = 200;
-        public int WIZARDTOWER { get; set; }
-        public double WIZARDTOWERPRICE { get; set; } = 300;
+        public double FACTORYPRICE { get; set; } = 130000;
+        public int BANK { get; set; }
+        public double BANKPRICE { get; set; } = 1400000;
 
         public cookie(int cookie)
         {
@@ -49,19 +49,16 @@ namespace CookieCount
         {
             this.FACTORY++;
         }
-        public void addWizzardTower()
+        public void addBank()
         {
-            this.WIZARDTOWER++;
+            this.BANK++;
         }
         public void addFinger() { 
             this.FINGER++;
         }
 
 
-        public override string ToString()
-        {
-            return "" + COOKIES;
-        }
+        
 
     }
 }

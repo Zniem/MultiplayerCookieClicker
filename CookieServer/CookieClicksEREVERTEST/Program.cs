@@ -12,6 +12,7 @@ namespace Test
     class Program
     {
         static cookie c = new cookie(1000);
+        static List<String> players = new List<String>();
         static void Main(string[] args)
         {            
             TcpListener listener = new TcpListener(IPAddress.Any, 1330);
@@ -36,9 +37,9 @@ namespace Test
         {
             while (true)
             {
-                c.COOKIES = c.COOKIES + (c.FINGER * 0.1) + (c.GRANDMA * 1) + (c.FARM * 8) + (c.MINE * 47) + (c.FACTORY * 260) + (c.WIZARDTOWER);
+                c.COOKIES = c.COOKIES + (c.FINGER * 0.1) + (c.GRANDMA * 1) + (c.FARM * 8) + (c.MINE * 47) + (c.FACTORY * 260) + (c.BANK * 1400);
                 Thread.Sleep(1000);
-                c.CPS = (c.FINGER * 0.1) + (c.GRANDMA * 1) + (c.FARM * 8) + (c.MINE * 47) + (c.FACTORY * 260) + (c.WIZARDTOWER);
+                c.CPS = (c.FINGER * 0.1) + (c.GRANDMA * 1) + (c.FARM * 8) + (c.MINE * 47) + (c.FACTORY * 260) + (c.BANK * 1400);
             }
         }
 
@@ -63,7 +64,12 @@ namespace Test
                 Thread.Sleep(5);
                 WriteTextMessage(client, "Factory:" + c.FACTORY + " Price: " + (int)c.FACTORYPRICE);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "Wizard:" + c.WIZARDTOWER + " Price: " + (int)c.WIZARDTOWERPRICE);
+                WriteTextMessage(client, "Bank:" + c.BANK + " Price: " + (int)c.BANKPRICE);
+                Thread.Sleep(5);
+                foreach (String s in players) {
+                    WriteTextMessage(client, "Player: " + s);
+                    Thread.Sleep(5);
+                }
                 Console.WriteLine("message send" + c.GRANDMAPRICE);
                 Thread.Sleep(5);
                 
@@ -99,7 +105,7 @@ namespace Test
                         c.COOKIES = c.COOKIES - (int)c.GRANDMAPRICE;
                         c.GRANDMAPRICE = c.GRANDMAPRICE * 1.15;
                         Console.WriteLine("GRANDMA added");
-                    }   
+                    }
                 }
                 else if (msg == "FARM")
                 {
@@ -131,15 +137,19 @@ namespace Test
                         Console.WriteLine("FACTORY added");
                     }
                 }
-                else if (msg == "WIZZARD")
+                else if (msg == "BANK")
                 {
-                    if (c.COOKIES >= c.WIZARDTOWERPRICE)
+                    if (c.COOKIES >= c.BANKPRICE)
                     {
-                        c.addWizzardTower();
-                        c.COOKIES = c.COOKIES - (int)c.WIZARDTOWERPRICE;
-                        c.WIZARDTOWERPRICE = c.WIZARDTOWERPRICE * 1.5;
-                        Console.WriteLine("Wizzard added");
+                        c.addBank();
+                        c.COOKIES = c.COOKIES - (int)c.BANKPRICE;
+                        c.BANKPRICE = c.BANKPRICE * 1.5;
+                        Console.WriteLine("BANK added");
                     }
+                }
+                else if (msg.Contains("Player")) {
+                    msg = msg.Substring(8);
+                    players.Add(msg);
                 }
 
             }

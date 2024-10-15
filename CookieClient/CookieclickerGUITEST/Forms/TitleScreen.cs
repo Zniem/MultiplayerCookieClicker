@@ -19,7 +19,13 @@ namespace CookieclickerGUITEST
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Program.WriteTextMessage(Program.client, "Player: " + NameTextBox.Text);
             (new MainGame()).Show(); this.Hide();
+        }
+
+        private void TitleScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,7 +33,7 @@ namespace CookieclickerGUITEST
         private void timer_Tick(object sender, EventArgs e)
         {
             String msg = Program.ReadTextMessage(Program.client);
-            if (msg.Contains("Cookies")) { 
+            if (msg.Contains("Cookies")) {
                 label1.Text = msg;
             }
             else if (msg.Contains("CPS"))
@@ -60,9 +60,12 @@ namespace CookieclickerGUITEST
             {
                 FactoryLabel.Text = msg;
             }
-            else if (msg.Contains("Wizard"))
+            else if (msg.Contains("Bank"))
             {
-                WizardTowerLabel.Text = msg;
+                BankLabel.Text = msg;
+            }
+            else if (msg.Contains("Player")) { 
+                PlayerLabel.Text = msg + "\n";
             }
 
 
@@ -100,11 +103,11 @@ namespace CookieclickerGUITEST
         {
             Program.WriteTextMessage(Program.client, "FACTORY");
         }
-
-        private void WizardButton_Click(object sender, EventArgs e)
+        private void BankButton_Click(object sender, EventArgs e)
         {
-            Program.WriteTextMessage(Program.client, "WIZZARD");
+            Program.WriteTextMessage(Program.client, "BANK");
         }
+
 
         //all methods leading to different forms
         private void achievementsToolStripMenuItem_Click(object sender, EventArgs e)
