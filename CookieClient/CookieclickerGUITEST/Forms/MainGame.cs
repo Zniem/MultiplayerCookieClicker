@@ -35,7 +35,15 @@ namespace CookieclickerGUITEST
             String msg = Program.ReadTextMessage(Program.client);
             if (msg.Contains("Cookies")) { 
                 label1.Text = msg;
-            } 
+            }
+            else if (msg.Contains("CPS"))
+            {
+                CPSLabel.Text = msg;
+            }
+            else if (msg.Contains("Fingers"))
+            {
+                FingerLabel.Text = msg;
+            }
             else if (msg.Contains("Grandmas"))
             {
                 GrandmaLabel.Text = msg;
@@ -62,10 +70,15 @@ namespace CookieclickerGUITEST
         }
 
         //sending messages to server
+        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Program.WriteTextMessage(Program.client, "COOKIE");
 
+        }
+        private void FingerButton_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "FINGER");
         }
 
         private void GrandmaButton_Click(object sender, EventArgs e)
@@ -107,5 +120,7 @@ namespace CookieclickerGUITEST
         {
             (new MessageForm()).Show(); this.Hide();
         }
+
+        
     }
 }

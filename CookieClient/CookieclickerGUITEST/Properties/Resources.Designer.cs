@@ -79,5 +79,25 @@ namespace CookieclickerGUITEST.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tumblr_7e9be39c5fa289d18fb6722c1d84f2e5_8b47a8f8_1280 {
+            get {
+                object obj = ResourceManager.GetObject("tumblr_7e9be39c5fa289d18fb6722c1d84f2e5_8b47a8f8_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wp7667538_cookie_clicker_wallpapers {
+            get {
+                object obj = ResourceManager.GetObject("wp7667538-cookie-clicker-wallpapers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
