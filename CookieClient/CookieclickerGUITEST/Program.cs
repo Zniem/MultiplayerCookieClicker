@@ -11,7 +11,7 @@ namespace CookieclickerGUITEST
 {
     internal static class Program
     {
-        public static TcpClient client { get; set; } = new TcpClient("145.49.17.96", 1330);
+        public static TcpClient client { get; set; } = new TcpClient("192.168.2.8", 1330);
         //Start GUI
         [STAThread]
         static void Main()

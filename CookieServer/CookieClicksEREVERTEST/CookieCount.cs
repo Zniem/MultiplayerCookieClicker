@@ -10,6 +10,7 @@ namespace CookieCount
     {
         public int COOKIES { get; set; }
         public int GRANDMA { get; set; }
+        public double GRANDMAPRICE { get; set; } = 20;
         public int FARM { get; set; }
         public int MINE { get; set; }
         public int FACTORY { get; set; }

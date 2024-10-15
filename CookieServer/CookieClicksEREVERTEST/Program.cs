@@ -37,13 +37,19 @@ namespace Test
             while (!done)
             {               
                 WriteTextMessage(client, "Cookies: " + c);
-                WriteTextMessage(client, "Grandmas:" + c.GRANDMA);
+                Thread.Sleep(5);
+                WriteTextMessage(client, "Grandmas:" + c.GRANDMA + " Price: " + (int)c.GRANDMAPRICE);
+                Thread.Sleep(5);
                 WriteTextMessage(client, "Farm:" + c.FARM);
+                Thread.Sleep(5);
                 WriteTextMessage(client, "Mine:" + c.MINE);
+                Thread.Sleep(5);
                 WriteTextMessage(client, "Factory:" + c.FACTORY);
+                Thread.Sleep(5);
                 WriteTextMessage(client, "Wizard:" + c.WIZARDTOWER);
-                Console.WriteLine("message send" + c);
-                Thread.Sleep(10);
+                Console.WriteLine("message send" + c.GRANDMAPRICE);
+                Thread.Sleep(5);
+                c.COOKIES = c.COOKIES + c.GRANDMA;
                 
             }
         }
@@ -61,8 +67,12 @@ namespace Test
                     Console.WriteLine("cookies added");
                 }
                 else if (msg == "GRANDMA") {
-                    c.addGrandma();
-                    Console.WriteLine("GRANDMA added");
+                    if (c.COOKIES >= c.GRANDMAPRICE) {
+                        c.addGrandma();
+                        c.COOKIES = c.COOKIES - (int)c.GRANDMAPRICE;
+                        c.GRANDMAPRICE = c.GRANDMAPRICE * 1.5;
+                        Console.WriteLine("GRANDMA added");
+                    }   
                 }
                 else if (msg == "FARM")
                 {

@@ -32,8 +32,8 @@ namespace CookieclickerGUITEST
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            String msg = "";
-            if ((msg = Program.ReadTextMessage(client)).Contains("Cookies")) { 
+            String msg = Program.ReadTextMessage(Program.client);
+            if (msg.Contains("Cookies")) { 
                 label1.Text = msg;
             } 
             else if (msg.Contains("Grandmas"))
@@ -61,8 +61,39 @@ namespace CookieclickerGUITEST
 
         }
 
+        //sending messages to server
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "COOKIE");
 
+        }
 
+        private void GrandmaButton_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "GRANDMA");
+        }
+
+        private void FarmButton_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "FARM");
+        }
+
+        private void MineButton_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "MINE");
+        }
+
+        private void FactoryButton_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "FACTORY");
+        }
+
+        private void WizardButton_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "WIZZARD");
+        }
+
+        //all methods leading to different forms
         private void achievementsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new Achievements()).Show(); this.Hide();
@@ -70,43 +101,11 @@ namespace CookieclickerGUITEST
 
         private void leaderboardsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new Leaderbord()).Show(); this.Hide(); 
+            (new Leaderbord()).Show(); this.Hide();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Program.WriteTextMessage(client, "COOKIE");
-
-        }
-
         private void messagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new MessageForm()).Show(); this.Hide();    
+            (new MessageForm()).Show(); this.Hide();
         }
-
-        private void GrandmaButton_Click(object sender, EventArgs e)
-        {
-            Program.WriteTextMessage(client, "GRANDMA");
-        }
-
-        private void FarmButton_Click(object sender, EventArgs e)
-        {
-            Program.WriteTextMessage(client, "FARM");
-        }
-
-        private void MineButton_Click(object sender, EventArgs e)
-        {
-            Program.WriteTextMessage(client, "MINE");
-        }
-
-        private void FactoryButton_Click(object sender, EventArgs e)
-        {
-            Program.WriteTextMessage(client, "FACTORY");
-        }
-
-        private void WizardButton_Click(object sender, EventArgs e)
-        {
-            Program.WriteTextMessage(client, "WIZZARD");
-        }       
     }
 }
