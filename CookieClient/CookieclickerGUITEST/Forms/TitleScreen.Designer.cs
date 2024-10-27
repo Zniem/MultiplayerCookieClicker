@@ -40,6 +40,9 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -74,7 +77,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.button1.Location = new System.Drawing.Point(568, 429);
+            this.button1.Location = new System.Drawing.Point(576, 471);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(413, 167);
             this.button1.TabIndex = 2;
@@ -145,7 +148,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::CookieclickerGUITEST.Properties.Resources.Cookie_clonkker;
-            this.pictureBox7.Location = new System.Drawing.Point(442, 602);
+            this.pictureBox7.Location = new System.Drawing.Point(445, 653);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(279, 189);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,11 +175,40 @@
             this.pictureBox9.TabIndex = 11;
             this.pictureBox9.TabStop = false;
             // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(637, 385);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(292, 22);
+            this.NameTextBox.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label3.Location = new System.Drawing.Point(683, 343);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(207, 39);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Enter Name:";
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLabel.Location = new System.Drawing.Point(724, 410);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
+            this.ErrorLabel.TabIndex = 14;
+            // 
             // TitleScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1556, 843);
+            this.Controls.Add(this.ErrorLabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
@@ -191,6 +223,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TitleScreen";
             this.Text = "Cookie Clicker";
+            this.Load += new System.EventHandler(this.TitleScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -219,5 +252,8 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }

@@ -122,5 +122,11 @@
   <ItemGroup>
     <None Include="Resources\Cookie clonkker1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tumblr_7e9be39c5fa289d18fb6722c1d84f2e5_8b47a8f8_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp7667538-cookie-clicker-wallpapers.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

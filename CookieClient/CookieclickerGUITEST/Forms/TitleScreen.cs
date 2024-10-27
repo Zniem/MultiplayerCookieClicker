@@ -19,7 +19,20 @@ namespace CookieclickerGUITEST
 
         private void button1_Click(object sender, EventArgs e)
         {
-            (new MainGame()).Show(); this.Hide();
+            if (NameTextBox.Text.Equals(""))
+            {
+                ErrorLabel.Text = "Please enter a name";
+            }
+            else
+            {
+                Program.WriteTextMessage(Program.client, "Player: " + NameTextBox.Text);
+                (new MainGame()).Show(); this.Hide();
+            }
+        }
+
+        private void TitleScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
