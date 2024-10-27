@@ -15,7 +15,8 @@ namespace CookieclickerGUITEST
 {
     public partial class MainGame : Form
     {
-        
+        List<String> players = new List<String>();
+        String playerstring = "";
 
         public MainGame()
         {
@@ -64,8 +65,19 @@ namespace CookieclickerGUITEST
             {
                 BankLabel.Text = msg;
             }
-            else if (msg.Contains("Player")) { 
-                PlayerLabel.Text = msg + "\n";
+            else if (msg.Contains("Player")) {
+                if (players.Contains(msg))
+                {
+
+                }
+                else { 
+                    players.Add(msg);
+                    playerstring = playerstring + msg + "\n";
+                    PlayerLabel.Text = playerstring;
+                }
+                
+
+                
             }
 
 
@@ -124,6 +136,9 @@ namespace CookieclickerGUITEST
             (new MessageForm()).Show(); this.Hide();
         }
 
-        
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

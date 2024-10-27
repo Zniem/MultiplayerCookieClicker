@@ -77,34 +77,34 @@ namespace CookieclickerGUITEST
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(2226, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1855, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cookieToolStripMenuItem
             // 
             this.cookieToolStripMenuItem.Name = "cookieToolStripMenuItem";
-            this.cookieToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
+            this.cookieToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.cookieToolStripMenuItem.Text = "Cookie";
             // 
             // achievementsToolStripMenuItem
             // 
             this.achievementsToolStripMenuItem.Name = "achievementsToolStripMenuItem";
-            this.achievementsToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
+            this.achievementsToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.achievementsToolStripMenuItem.Text = "Achievements";
             this.achievementsToolStripMenuItem.Click += new System.EventHandler(this.achievementsToolStripMenuItem_Click);
             // 
             // messagesToolStripMenuItem
             // 
             this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
-            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.messagesToolStripMenuItem.Text = "Messages";
             this.messagesToolStripMenuItem.Click += new System.EventHandler(this.messagesToolStripMenuItem_Click);
             // 
             // leaderboardsToolStripMenuItem
             // 
             this.leaderboardsToolStripMenuItem.Name = "leaderboardsToolStripMenuItem";
-            this.leaderboardsToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.leaderboardsToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.leaderboardsToolStripMenuItem.Text = "Leaderboards";
             this.leaderboardsToolStripMenuItem.Click += new System.EventHandler(this.leaderboardsToolStripMenuItem_Click);
             // 
@@ -127,9 +127,10 @@ namespace CookieclickerGUITEST
             this.label2.Location = new System.Drawing.Point(1488, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(385, 94);
+            this.label2.Size = new System.Drawing.Size(313, 78);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Upgrades";
+            this.label2.Text = "Buildings";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // GrandmaButton
             // 
@@ -195,7 +196,7 @@ namespace CookieclickerGUITEST
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(911, 87);
+            this.label3.Location = new System.Drawing.Point(759, 176);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(295, 38);
@@ -294,7 +295,7 @@ namespace CookieclickerGUITEST
             // 
             this.PlayerLabel.AutoSize = true;
             this.PlayerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.PlayerLabel.Location = new System.Drawing.Point(918, 163);
+            this.PlayerLabel.Location = new System.Drawing.Point(911, 260);
             this.PlayerLabel.Name = "PlayerLabel";
             this.PlayerLabel.Size = new System.Drawing.Size(109, 39);
             this.PlayerLabel.TabIndex = 20;

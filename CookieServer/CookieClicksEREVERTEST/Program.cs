@@ -68,9 +68,11 @@ namespace Test
                 Thread.Sleep(5);
                 foreach (String s in players) {
                     WriteTextMessage(client, "Player: " + s);
+                    Console.WriteLine("message send" + s);
                     Thread.Sleep(5);
+
                 }
-                Console.WriteLine("message send" + c.GRANDMAPRICE);
+                
                 Thread.Sleep(5);
                 
                 
@@ -113,7 +115,7 @@ namespace Test
                     {
                         c.addFarm();
                         c.COOKIES = c.COOKIES - (int)c.FARMPRICE;
-                        c.FARMPRICE = c.FARMPRICE * 1.5;
+                        c.FARMPRICE = c.FARMPRICE * 1.15;
                         Console.WriteLine("FARM added");
                     }
                 }
@@ -123,7 +125,7 @@ namespace Test
                     {
                         c.addMine();
                         c.COOKIES = c.COOKIES - (int)c.MINEPRICE;
-                        c.MINEPRICE = c.MINEPRICE * 1.5;
+                        c.MINEPRICE = c.MINEPRICE * 1.15;
                         Console.WriteLine("MINE added");
                     }
                 }
@@ -133,7 +135,7 @@ namespace Test
                     {
                         c.addFactory();
                         c.COOKIES = c.COOKIES - (int)c.FACTORYPRICE;
-                        c.FACTORYPRICE = c.FACTORYPRICE * 1.5;
+                        c.FACTORYPRICE = c.FACTORYPRICE * 1.15;
                         Console.WriteLine("FACTORY added");
                     }
                 }
@@ -143,7 +145,7 @@ namespace Test
                     {
                         c.addBank();
                         c.COOKIES = c.COOKIES - (int)c.BANKPRICE;
-                        c.BANKPRICE = c.BANKPRICE * 1.5;
+                        c.BANKPRICE = c.BANKPRICE * 1.15;
                         Console.WriteLine("BANK added");
                     }
                 }
@@ -158,21 +160,14 @@ namespace Test
         public static void WriteTextMessage(TcpClient client, string message)
         {
             var stream = new StreamWriter(client.GetStream(), Encoding.ASCII, -1, true);
-            {
                 stream.WriteLine(message);
                 stream.Flush();
-            }
         }
 
         public static string ReadTextMessage(TcpClient client)
         {
-            var stream = new StreamReader(client.GetStream(), Encoding.ASCII);
-            {
-                
+            var stream = new StreamReader(client.GetStream(), Encoding.ASCII); 
                 return stream.ReadLine();
-            }
         }
-
-
     }
 }

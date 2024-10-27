@@ -8,6 +8,7 @@ namespace CookieCount
 {
     public class cookie
     {
+        //all variables 
         public double COOKIES { get; set; }
         public double CPS{ get; set; }
         public int FINGER { get; set; }
@@ -23,42 +24,19 @@ namespace CookieCount
         public int BANK { get; set; }
         public double BANKPRICE { get; set; } = 1400000;
 
+        //initializer
         public cookie(int cookie)
         {
             this.COOKIES = cookie;
         }
 
-        public void addcookies()
-        {
-            this.COOKIES++;
-        }
-
-        public void addGrandma()
-        {
-            this.GRANDMA++;
-        }
-        public void addFarm()
-        {
-            this.FARM++;
-        }
-        public void addMine()
-        {
-            this.MINE++;
-        }
-        public void addFactory()
-        {
-            this.FACTORY++;
-        }
-        public void addBank()
-        {
-            this.BANK++;
-        }
-        public void addFinger() { 
-            this.FINGER++;
-        }
-
-
-        
-
+        //all add 1 methodes
+        public void addcookies(){this.COOKIES++;}
+        public void addGrandma(){this.GRANDMA++;}
+        public void addFarm(){this.FARM++;}
+        public void addMine(){this.MINE++;}
+        public void addFactory(){this.FACTORY++;}
+        public void addBank(){this.BANK++;}
+        public void addFinger(){ this.FINGER++;}
     }
 }
