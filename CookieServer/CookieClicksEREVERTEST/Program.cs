@@ -9,7 +9,7 @@ namespace Test {
         public static CookieCount.Cookie Cookie;
         static List<String> players = new List<String>();
         static FileStorage fs = new FileStorage();
-        static void Main(string[] args) {
+        static async Task Main(string[] args) {
             fs.LoadFromFile();
 
 
@@ -24,18 +24,26 @@ namespace Test {
                 thread.Start(client);
                 Thread thread1 = new Thread(HandleIncomingMessages);
                 thread1.Start(client);
-                Thread thread2 = new Thread(CookieCount);
-                thread2.Start();
+                CookieCount();
             }
 
         }
 
         private static void CookieCount() {
             while (true) {
-                Cookie.COOKIES = Cookie.COOKIES + (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
-                Thread.Sleep(1000);
-                Cookie.CPS = (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
-                //fs.SaveToFile();
+                DateTime lastUpdate = DateTime.Now;
+                while (true)
+                {
+                    DateTime now = DateTime.Now;
+                    if (lastUpdate.Second <= now.Second)
+                    {
+                        Cookie.COOKIES = Cookie.COOKIES + (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
+                        Cookie.CPS = (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
+                        fs.SaveToFile();
+                    }
+
+                    lastUpdate = DateTime.Now;
+                }
             }
         }
 
