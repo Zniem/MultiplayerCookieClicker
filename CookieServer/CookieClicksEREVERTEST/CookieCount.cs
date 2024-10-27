@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CookieCount
 {
-    public class cookie
+    public class Cookie
     {
         //all variables 
         public double COOKIES { get; set; }
@@ -24,11 +24,32 @@ namespace CookieCount
         public int BANK { get; set; }
         public double BANKPRICE { get; set; } = 1400000;
 
-        //initializer
-        public cookie(int cookie)
+        public Cookie(double cOOKIES, double cPS, int fINGER, double fINGERPRICE, int gRANDMA, double gRANDMAPRICE, int fARM, double fARMPRICE, int mINE, double mINEPRICE, int fACTORY, double fACTORYPRICE, int bANK, double bANKPRICE)
+        {
+            COOKIES = cOOKIES;
+            CPS = cPS;
+            FINGER = fINGER;
+            FINGERPRICE = fINGERPRICE;
+            GRANDMA = gRANDMA;
+            GRANDMAPRICE = gRANDMAPRICE;
+            FARM = fARM;
+            FARMPRICE = fARMPRICE;
+            MINE = mINE;
+            MINEPRICE = mINEPRICE;
+            FACTORY = fACTORY;
+            FACTORYPRICE = fACTORYPRICE;
+            BANK = bANK;
+            BANKPRICE = bANKPRICE;
+        }
+
+        public Cookie(int cookie)
         {
             this.COOKIES = cookie;
         }
+
+
+        //initializer
+
 
         //all add 1 methodes
         public void addcookies(){this.COOKIES++;}

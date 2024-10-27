@@ -1,4 +1,3 @@
-using CookieclickerGUITEST.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,20 +120,7 @@ namespace CookieclickerGUITEST
         }
 
 
-        //all methods leading to different forms
-        private void achievementsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            (new Achievements()).Show(); this.Hide();
-        }
 
-        private void leaderboardsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            (new Leaderbord()).Show(); this.Hide();
-        }
-        private void messagesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            (new MessageForm()).Show(); this.Hide();
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {

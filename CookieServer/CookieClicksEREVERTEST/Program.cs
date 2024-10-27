@@ -5,16 +5,22 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Xml.Linq;
+using CookieClicksEREVERTEST;
 using CookieCount;
 
 namespace Test
 {
     class Program
     {
-        static cookie c = new cookie(1000);
+        public static CookieCount.Cookie Cookie;
         static List<String> players = new List<String>();
+        static FileStorage fs = new FileStorage();
         static void Main(string[] args)
         {            
+            
+            fs.LoadFromFile();
+
+
             TcpListener listener = new TcpListener(IPAddress.Any, 1330);
             listener.Start();
             while (true)
@@ -37,9 +43,10 @@ namespace Test
         {
             while (true)
             {
-                c.COOKIES = c.COOKIES + (c.FINGER * 0.1) + (c.GRANDMA * 1) + (c.FARM * 8) + (c.MINE * 47) + (c.FACTORY * 260) + (c.BANK * 1400);
+                Cookie.COOKIES = Cookie.COOKIES + (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
                 Thread.Sleep(1000);
-                c.CPS = (c.FINGER * 0.1) + (c.GRANDMA * 1) + (c.FARM * 8) + (c.MINE * 47) + (c.FACTORY * 260) + (c.BANK * 1400);
+                Cookie.CPS = (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
+                fs.SaveToFile();
             }
         }
 
@@ -50,21 +57,21 @@ namespace Test
             bool done = false;
             while (!done)
             {               
-                WriteTextMessage(client, "Cookies: " + (int)c.COOKIES);
+                WriteTextMessage(client, "Cookies: " + (int)Cookie.COOKIES);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "CPS: " + c.CPS);
+                WriteTextMessage(client, "CPS: " + Cookie.CPS);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "Fingers:" + c.FINGER + " Price: " + (int)c.FINGERPRICE);
+                WriteTextMessage(client, "Fingers:" + Cookie.FINGER + " Price: " + (int)Cookie.FINGERPRICE);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "Grandmas:" + c.GRANDMA + " Price: " + (int)c.GRANDMAPRICE);
+                WriteTextMessage(client, "Grandmas:" + Cookie.GRANDMA + " Price: " + (int)Cookie.GRANDMAPRICE);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "Farm:" + c.FARM + " Price: " + (int)c.FARMPRICE);
+                WriteTextMessage(client, "Farm:" + Cookie.FARM + " Price: " + (int)Cookie.FARMPRICE);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "Mine:" + c.MINE + " Price: " + (int)c.MINEPRICE);
+                WriteTextMessage(client, "Mine:" + Cookie.MINE + " Price: " + (int)Cookie.MINEPRICE);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "Factory:" + c.FACTORY + " Price: " + (int)c.FACTORYPRICE);
+                WriteTextMessage(client, "Factory:" + Cookie.FACTORY + " Price: " + (int)Cookie.FACTORYPRICE);
                 Thread.Sleep(5);
-                WriteTextMessage(client, "Bank:" + c.BANK + " Price: " + (int)c.BANKPRICE);
+                WriteTextMessage(client, "Bank:" + Cookie.BANK + " Price: " + (int)Cookie.BANKPRICE);
                 Thread.Sleep(5);
                 foreach (String s in players) {
                     WriteTextMessage(client, "Player: " + s);
@@ -88,64 +95,64 @@ namespace Test
                 string msg = ReadTextMessage(client);
                 if (msg == "COOKIE")
                 {
-                    c.addcookies();
+                    Cookie.addcookies();
                     Console.WriteLine("cookies added");
                 }
                 else if (msg == "FINGER")
                 {
-                    if (c.COOKIES >= c.FINGERPRICE)
+                    if (Cookie.COOKIES >= Cookie.FINGERPRICE)
                     {
-                        c.addFinger();
-                        c.COOKIES = c.COOKIES - (int)c.FINGERPRICE;
-                        c.FINGERPRICE = c.FINGERPRICE * 1.15;
+                        Cookie.addFinger();
+                        Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.FINGERPRICE;
+                        Cookie.FINGERPRICE = Cookie.FINGERPRICE * 1.15;
                         Console.WriteLine("FINGER added");
                     }
                 }
                 else if (msg == "GRANDMA") {
-                    if (c.COOKIES >= c.GRANDMAPRICE) {
-                        c.addGrandma();
-                        c.COOKIES = c.COOKIES - (int)c.GRANDMAPRICE;
-                        c.GRANDMAPRICE = c.GRANDMAPRICE * 1.15;
+                    if (Cookie.COOKIES >= Cookie.GRANDMAPRICE) {
+                        Cookie.addGrandma();
+                        Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.GRANDMAPRICE;
+                        Cookie.GRANDMAPRICE = Cookie.GRANDMAPRICE * 1.15;
                         Console.WriteLine("GRANDMA added");
                     }
                 }
                 else if (msg == "FARM")
                 {
-                    if (c.COOKIES >= c.FARMPRICE)
+                    if (Cookie.COOKIES >= Cookie.FARMPRICE)
                     {
-                        c.addFarm();
-                        c.COOKIES = c.COOKIES - (int)c.FARMPRICE;
-                        c.FARMPRICE = c.FARMPRICE * 1.15;
+                        Cookie.addFarm();
+                        Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.FARMPRICE;
+                        Cookie.FARMPRICE = Cookie.FARMPRICE * 1.15;
                         Console.WriteLine("FARM added");
                     }
                 }
                 else if (msg == "MINE")
                 {
-                    if (c.COOKIES >= c.MINEPRICE)
+                    if (Cookie.COOKIES >= Cookie.MINEPRICE)
                     {
-                        c.addMine();
-                        c.COOKIES = c.COOKIES - (int)c.MINEPRICE;
-                        c.MINEPRICE = c.MINEPRICE * 1.15;
+                        Cookie.addMine();
+                        Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.MINEPRICE;
+                        Cookie.MINEPRICE = Cookie.MINEPRICE * 1.15;
                         Console.WriteLine("MINE added");
                     }
                 }
                 else if (msg == "FACTORY")
                 {
-                    if (c.COOKIES >= c.FACTORYPRICE)
+                    if (Cookie.COOKIES >= Cookie.FACTORYPRICE)
                     {
-                        c.addFactory();
-                        c.COOKIES = c.COOKIES - (int)c.FACTORYPRICE;
-                        c.FACTORYPRICE = c.FACTORYPRICE * 1.15;
+                        Cookie.addFactory();
+                        Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.FACTORYPRICE;
+                        Cookie.FACTORYPRICE = Cookie.FACTORYPRICE * 1.15;
                         Console.WriteLine("FACTORY added");
                     }
                 }
                 else if (msg == "BANK")
                 {
-                    if (c.COOKIES >= c.BANKPRICE)
+                    if (Cookie.COOKIES >= Cookie.BANKPRICE)
                     {
-                        c.addBank();
-                        c.COOKIES = c.COOKIES - (int)c.BANKPRICE;
-                        c.BANKPRICE = c.BANKPRICE * 1.15;
+                        Cookie.addBank();
+                        Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.BANKPRICE;
+                        Cookie.BANKPRICE = Cookie.BANKPRICE * 1.15;
                         Console.WriteLine("BANK added");
                     }
                 }

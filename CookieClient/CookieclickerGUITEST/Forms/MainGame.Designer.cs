@@ -29,11 +29,6 @@ namespace CookieclickerGUITEST
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.achievementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.messagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.leaderboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.GrandmaButton = new System.Windows.Forms.Button();
@@ -51,7 +46,6 @@ namespace CookieclickerGUITEST
             this.FingerLabel = new System.Windows.Forms.Label();
             this.CPSLabel = new System.Windows.Forms.Label();
             this.PlayerLabel = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,48 +59,6 @@ namespace CookieclickerGUITEST
             this.label1.Size = new System.Drawing.Size(309, 94);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cookie";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cookieToolStripMenuItem,
-            this.achievementsToolStripMenuItem,
-            this.messagesToolStripMenuItem,
-            this.leaderboardsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1855, 25);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cookieToolStripMenuItem
-            // 
-            this.cookieToolStripMenuItem.Name = "cookieToolStripMenuItem";
-            this.cookieToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
-            this.cookieToolStripMenuItem.Text = "Cookie";
-            // 
-            // achievementsToolStripMenuItem
-            // 
-            this.achievementsToolStripMenuItem.Name = "achievementsToolStripMenuItem";
-            this.achievementsToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.achievementsToolStripMenuItem.Text = "Achievements";
-            this.achievementsToolStripMenuItem.Click += new System.EventHandler(this.achievementsToolStripMenuItem_Click);
-            // 
-            // messagesToolStripMenuItem
-            // 
-            this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
-            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-            this.messagesToolStripMenuItem.Text = "Messages";
-            this.messagesToolStripMenuItem.Click += new System.EventHandler(this.messagesToolStripMenuItem_Click);
-            // 
-            // leaderboardsToolStripMenuItem
-            // 
-            this.leaderboardsToolStripMenuItem.Name = "leaderboardsToolStripMenuItem";
-            this.leaderboardsToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
-            this.leaderboardsToolStripMenuItem.Text = "Leaderboards";
-            this.leaderboardsToolStripMenuItem.Click += new System.EventHandler(this.leaderboardsToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -127,7 +79,7 @@ namespace CookieclickerGUITEST
             this.label2.Location = new System.Drawing.Point(1488, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(313, 78);
+            this.label2.Size = new System.Drawing.Size(375, 94);
             this.label2.TabIndex = 4;
             this.label2.Text = "Buildings";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -324,14 +276,10 @@ namespace CookieclickerGUITEST
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainGame";
             this.Text = "Cookie Clicker";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -340,11 +288,6 @@ namespace CookieclickerGUITEST
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cookieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem achievementsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem messagesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem leaderboardsToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button GrandmaButton;

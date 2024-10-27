@@ -46,29 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Achievements.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Achievements.Designer.cs">
-      <DependentUpon>Achievements.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Leaderbord.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Leaderbord.Designer.cs">
-      <DependentUpon>Leaderbord.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainGame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainGame.Designer.cs">
       <DependentUpon>MainGame.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MessageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MessageForm.Designer.cs">
-      <DependentUpon>MessageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TitleScreen.cs">
       <SubType>Form</SubType>
@@ -78,17 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Achievements.resx">
-      <DependentUpon>Achievements.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Leaderbord.resx">
-      <DependentUpon>Leaderbord.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainGame.resx">
       <DependentUpon>MainGame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MessageForm.resx">
-      <DependentUpon>MessageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TitleScreen.resx">
       <DependentUpon>TitleScreen.cs</DependentUpon>
