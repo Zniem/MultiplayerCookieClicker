@@ -1,30 +1,21 @@
-﻿using System;
-using System.IO;
+﻿using CookieClicksEREVERTEST;
+using CookieCount;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
-using System.Xml.Linq;
-using CookieClicksEREVERTEST;
-using CookieCount;
 
-namespace Test
-{
-    class Program
-    {
+namespace Test {
+    class Program {
         public static CookieCount.Cookie Cookie;
         static List<String> players = new List<String>();
         static FileStorage fs = new FileStorage();
-        static void Main(string[] args)
-        {            
-            
+        static void Main(string[] args) {
             fs.LoadFromFile();
 
 
             TcpListener listener = new TcpListener(IPAddress.Any, 1330);
             listener.Start();
-            while (true)
-            {
+            while (true) {
                 Console.WriteLine("Waiting for connection");
 
                 TcpClient client = listener.AcceptTcpClient();
@@ -39,24 +30,20 @@ namespace Test
 
         }
 
-        private static void CookieCount()
-        {
-            while (true)
-            {
+        private static void CookieCount() {
+            while (true) {
                 Cookie.COOKIES = Cookie.COOKIES + (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
                 Thread.Sleep(1000);
                 Cookie.CPS = (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
-                fs.SaveToFile();
+                //fs.SaveToFile();
             }
         }
 
-        static void HandleOutgoingMessages(object obj)
-        {
+        static void HandleOutgoingMessages(object obj) {
             TcpClient client = obj as TcpClient;
 
             bool done = false;
-            while (!done)
-            {               
+            while (!done) {
                 WriteTextMessage(client, "Cookies: " + (int)Cookie.COOKIES);
                 Thread.Sleep(5);
                 WriteTextMessage(client, "CPS: " + Cookie.CPS);
@@ -79,84 +66,64 @@ namespace Test
                     Thread.Sleep(5);
 
                 }
-                
+
                 Thread.Sleep(5);
-                
-                
+
+
             }
         }
-        static void HandleIncomingMessages(object obj)
-        {
+        static void HandleIncomingMessages(object obj) {
             TcpClient client = obj as TcpClient;
 
             bool done = false;
-            while (!done)
-            {
+            while (!done) {
                 string msg = ReadTextMessage(client);
-                if (msg == "COOKIE")
-                {
+                if (msg == "COOKIE") {
                     Cookie.addcookies();
                     Console.WriteLine("cookies added");
-                }
-                else if (msg == "FINGER")
-                {
-                    if (Cookie.COOKIES >= Cookie.FINGERPRICE)
-                    {
+                } else if (msg == "FINGER") {
+                    if (Cookie.COOKIES >= Cookie.FINGERPRICE) {
                         Cookie.addFinger();
                         Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.FINGERPRICE;
                         Cookie.FINGERPRICE = Cookie.FINGERPRICE * 1.15;
                         Console.WriteLine("FINGER added");
                     }
-                }
-                else if (msg == "GRANDMA") {
+                } else if (msg == "GRANDMA") {
                     if (Cookie.COOKIES >= Cookie.GRANDMAPRICE) {
                         Cookie.addGrandma();
                         Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.GRANDMAPRICE;
                         Cookie.GRANDMAPRICE = Cookie.GRANDMAPRICE * 1.15;
                         Console.WriteLine("GRANDMA added");
                     }
-                }
-                else if (msg == "FARM")
-                {
-                    if (Cookie.COOKIES >= Cookie.FARMPRICE)
-                    {
+                } else if (msg == "FARM") {
+                    if (Cookie.COOKIES >= Cookie.FARMPRICE) {
                         Cookie.addFarm();
                         Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.FARMPRICE;
                         Cookie.FARMPRICE = Cookie.FARMPRICE * 1.15;
                         Console.WriteLine("FARM added");
                     }
-                }
-                else if (msg == "MINE")
-                {
-                    if (Cookie.COOKIES >= Cookie.MINEPRICE)
-                    {
+                } else if (msg == "MINE") {
+                    if (Cookie.COOKIES >= Cookie.MINEPRICE) {
                         Cookie.addMine();
                         Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.MINEPRICE;
                         Cookie.MINEPRICE = Cookie.MINEPRICE * 1.15;
                         Console.WriteLine("MINE added");
                     }
-                }
-                else if (msg == "FACTORY")
-                {
-                    if (Cookie.COOKIES >= Cookie.FACTORYPRICE)
-                    {
+                } else if (msg == "FACTORY") {
+                    if (Cookie.COOKIES >= Cookie.FACTORYPRICE) {
                         Cookie.addFactory();
                         Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.FACTORYPRICE;
                         Cookie.FACTORYPRICE = Cookie.FACTORYPRICE * 1.15;
                         Console.WriteLine("FACTORY added");
                     }
-                }
-                else if (msg == "BANK")
-                {
-                    if (Cookie.COOKIES >= Cookie.BANKPRICE)
-                    {
+                } else if (msg == "BANK") {
+                    if (Cookie.COOKIES >= Cookie.BANKPRICE) {
                         Cookie.addBank();
                         Cookie.COOKIES = Cookie.COOKIES - (int)Cookie.BANKPRICE;
                         Cookie.BANKPRICE = Cookie.BANKPRICE * 1.15;
                         Console.WriteLine("BANK added");
                     }
-                }
-                else if (msg.Contains("Player")) {
+                } else if (msg.Contains("Player")) {
                     msg = msg.Substring(8);
                     players.Add(msg);
                 }
@@ -164,17 +131,15 @@ namespace Test
             }
         }
 
-        public static void WriteTextMessage(TcpClient client, string message)
-        {
+        public static void WriteTextMessage(TcpClient client, string message) {
             var stream = new StreamWriter(client.GetStream(), Encoding.ASCII, -1, true);
-                stream.WriteLine(message);
-                stream.Flush();
+            stream.WriteLine(message);
+            stream.Flush();
         }
 
-        public static string ReadTextMessage(TcpClient client)
-        {
-            var stream = new StreamReader(client.GetStream(), Encoding.ASCII); 
-                return stream.ReadLine();
+        public static string ReadTextMessage(TcpClient client) {
+            var stream = new StreamReader(client.GetStream(), Encoding.ASCII);
+            return stream.ReadLine();
         }
     }
 }

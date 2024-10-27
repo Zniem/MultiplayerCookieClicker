@@ -1,50 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CookieCount
-{
-    public class Cookie
-    {
+﻿namespace CookieCount {
+    public class Cookie {
         //all variables 
         public double COOKIES { get; set; }
-        public double CPS{ get; set; }
+        public double CPS { get; set; }
         public int FINGER { get; set; }
-        public double FINGERPRICE { get; set; } = 15;
+        public double FINGERPRICE { get; set; }
         public int GRANDMA { get; set; }
-        public double GRANDMAPRICE { get; set; } = 100;
+        public double GRANDMAPRICE { get; set; }
         public int FARM { get; set; }
-        public double FARMPRICE { get; set; } = 1100;
+        public double FARMPRICE { get; set; }
         public int MINE { get; set; }
-        public double MINEPRICE { get; set; } = 12000;
+        public double MINEPRICE { get; set; }
         public int FACTORY { get; set; }
-        public double FACTORYPRICE { get; set; } = 130000;
+        public double FACTORYPRICE { get; set; }
         public int BANK { get; set; }
-        public double BANKPRICE { get; set; } = 1400000;
+        public double BANKPRICE { get; set; }
 
-        public Cookie(double cOOKIES, double cPS, int fINGER, double fINGERPRICE, int gRANDMA, double gRANDMAPRICE, int fARM, double fARMPRICE, int mINE, double mINEPRICE, int fACTORY, double fACTORYPRICE, int bANK, double bANKPRICE)
-        {
-            COOKIES = cOOKIES;
-            CPS = cPS;
-            FINGER = fINGER;
-            FINGERPRICE = fINGERPRICE;
-            GRANDMA = gRANDMA;
-            GRANDMAPRICE = gRANDMAPRICE;
-            FARM = fARM;
-            FARMPRICE = fARMPRICE;
-            MINE = mINE;
-            MINEPRICE = mINEPRICE;
-            FACTORY = fACTORY;
-            FACTORYPRICE = fACTORYPRICE;
-            BANK = bANK;
-            BANKPRICE = bANKPRICE;
-        }
-
-        public Cookie(int cookie)
-        {
-            this.COOKIES = cookie;
+        public Cookie(double COOKIES, double CPS, int FINGER, double FINGERPRICE, int GRANDMA, double GRANDMAPRICE, int FARM, double FARMPRICE, int MINE, double MINEPRICE, int FACTORY, double FACTORYPRICE, int BANK, double BANKPRICE) {
+            this.COOKIES = COOKIES;
+            this.CPS = CPS;
+            this.FINGER = FINGER;
+            this.FINGERPRICE = FINGERPRICE;
+            this.GRANDMA = GRANDMA;
+            this.GRANDMAPRICE = GRANDMAPRICE;
+            this.FARM = FARM;
+            this.FARMPRICE = FARMPRICE;
+            this.MINE = MINE;
+            this.MINEPRICE = MINEPRICE;
+            this.FACTORY = FACTORY;
+            this.FACTORYPRICE = FACTORYPRICE;
+            this.BANK = BANK;
+            this.BANKPRICE = BANKPRICE;
         }
 
 
@@ -52,12 +38,12 @@ namespace CookieCount
 
 
         //all add 1 methodes
-        public void addcookies(){this.COOKIES++;}
-        public void addGrandma(){this.GRANDMA++;}
-        public void addFarm(){this.FARM++;}
-        public void addMine(){this.MINE++;}
-        public void addFactory(){this.FACTORY++;}
-        public void addBank(){this.BANK++;}
-        public void addFinger(){ this.FINGER++;}
+        public void addcookies() { this.COOKIES++; }
+        public void addGrandma() { this.GRANDMA++; }
+        public void addFarm() { this.FARM++; }
+        public void addMine() { this.MINE++; }
+        public void addFactory() { this.FACTORY++; }
+        public void addBank() { this.BANK++; }
+        public void addFinger() { this.FINGER++; }
     }
 }
