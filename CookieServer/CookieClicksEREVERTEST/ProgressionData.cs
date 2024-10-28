@@ -10,32 +10,32 @@
         public int Factory { get; set; }
         public int Bank { get; set; }
 
-        public int FingerPrice {
+        public long FingerPrice {
             get {
                 return (int)CalculatePrice(15, Finger);
             }
         }
-        public int GrandmaPrice {
+        public long GrandmaPrice {
             get {
                 return CalculatePrice(100, Grandma);
             }
         }
-        public int FarmPrice {
+        public long FarmPrice {
             get {
                 return CalculatePrice(1100, Farm);
             }
         }
-        public int MinePrice {
+        public long MinePrice {
             get {
                 return CalculatePrice(12000, Mine);
             }
         }
-        public int FactoryPrice {
+        public long FactoryPrice {
             get {
                 return CalculatePrice(130000, Factory);
             }
         }
-        public int BankPrice {
+        public long BankPrice {
             get {
                 return CalculatePrice(1400000, Bank);
             }
@@ -52,9 +52,9 @@
             Bank = bank;
         }
 
-        private static int CalculatePrice(int initialPrice, int amount) {
+        private static long CalculatePrice(int initialPrice, int amount) {
             double unroundedNumber = initialPrice * Math.Pow(1.15, amount);
-            return (int)Math.Ceiling(unroundedNumber);
+            return (long)Math.Ceiling(unroundedNumber);
         }
 
         //all add 1 methodes

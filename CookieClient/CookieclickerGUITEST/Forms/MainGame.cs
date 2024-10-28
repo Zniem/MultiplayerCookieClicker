@@ -43,9 +43,6 @@ namespace CookieclickerGUITEST {
         }
 
         //sending messages to server
-        private void pictureBox1_Click(object sender, EventArgs e) {
-            Program.WriteTextMessage(Program.client, "COOKIE");
-        }
         private void FingerButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "FINGER");
         }
@@ -67,6 +64,11 @@ namespace CookieclickerGUITEST {
         }
         private void BankButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "BANK");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.WriteTextMessage(Program.client, "COOKIE");
         }
     }
 }

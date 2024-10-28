@@ -29,7 +29,6 @@ namespace CookieclickerGUITEST
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.GrandmaButton = new System.Windows.Forms.Button();
             this.FarmButton = new System.Windows.Forms.Button();
@@ -46,7 +45,7 @@ namespace CookieclickerGUITEST
             this.FingerLabel = new System.Windows.Forms.Label();
             this.CPSLabel = new System.Windows.Forms.Label();
             this.PlayerLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,18 +58,6 @@ namespace CookieclickerGUITEST
             this.label1.Size = new System.Drawing.Size(309, 94);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cookie";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CookieclickerGUITEST.Properties.Resources.Cookie_clonkker;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 289);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(541, 485);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -147,7 +134,7 @@ namespace CookieclickerGUITEST
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(759, 94);
+            this.label3.Location = new System.Drawing.Point(849, 94);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(295, 38);
@@ -246,17 +233,32 @@ namespace CookieclickerGUITEST
             // 
             this.PlayerLabel.AutoSize = true;
             this.PlayerLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerLabel.Location = new System.Drawing.Point(759, 146);
+            this.PlayerLabel.Location = new System.Drawing.Point(849, 146);
             this.PlayerLabel.Name = "PlayerLabel";
             this.PlayerLabel.Size = new System.Drawing.Size(114, 39);
             this.PlayerLabel.TabIndex = 20;
             this.PlayerLabel.Text = "Player";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::CookieclickerGUITEST.Properties.Resources.Cookie_clonkker;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(126, 257);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(416, 484);
+            this.button1.TabIndex = 21;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2227, 1063);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PlayerLabel);
             this.Controls.Add(this.CPSLabel);
             this.Controls.Add(this.FingerLabel);
@@ -273,13 +275,11 @@ namespace CookieclickerGUITEST
             this.Controls.Add(this.FarmButton);
             this.Controls.Add(this.GrandmaButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainGame";
             this.Text = "Cookie Clicker";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,7 +287,6 @@ namespace CookieclickerGUITEST
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button GrandmaButton;
         private System.Windows.Forms.Button FarmButton;
@@ -304,6 +303,7 @@ namespace CookieclickerGUITEST
         private System.Windows.Forms.Label FingerLabel;
         private System.Windows.Forms.Label CPSLabel;
         private System.Windows.Forms.Label PlayerLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
