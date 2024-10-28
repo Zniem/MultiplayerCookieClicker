@@ -1,3 +1,4 @@
+using CookieServer;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
@@ -21,7 +22,7 @@ namespace CookieclickerGUITEST {
         private void timer_Tick(object sender, EventArgs e) {
             String msg = Program.ReadTextMessage(Program.client);
             if (msg.StartsWith("{") && msg.EndsWith("}")) {
-                CookieCount.Cookie cookie = JsonSerializer.Deserialize<CookieCount.Cookie>(msg);
+                ProgressionData cookie = JsonSerializer.Deserialize<ProgressionData>(msg);
                 label1.Text = $"Cookies: {(int)cookie.Cookies}";
                 CPSLabel.Text = $"CPS: {cookie.Cps}";
                 FingerLabel.Text = $"amount {cookie.Finger} : price {(int)cookie.FingerPrice}";
@@ -66,8 +67,7 @@ namespace CookieclickerGUITEST {
             Program.WriteTextMessage(Program.client, "BANK");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        private void button1_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "COOKIE");
         }
     }

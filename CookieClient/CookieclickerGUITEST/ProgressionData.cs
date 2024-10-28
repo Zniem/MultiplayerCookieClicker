@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace CookieCount {
-    public struct Cookie {
+namespace CookieServer {
+    public struct ProgressionData {
         //all variables 
         public double Cookies { get; set; }
-        public double Cps { get; set; }
         public int Finger { get; set; }
         public int Grandma { get; set; }
         public int Farm { get; set; }
@@ -12,40 +11,50 @@ namespace CookieCount {
         public int Factory { get; set; }
         public int Bank { get; set; }
 
-        public double FingerPrice {
+        public long FingerPrice {
             get {
-                return CalculatePrice(15, Finger);
+                return (int)CalculatePrice(15, Finger);
             }
         }
-        public double GrandmaPrice {
+        public long GrandmaPrice {
             get {
                 return CalculatePrice(100, Grandma);
             }
         }
-        public double FarmPrice {
+        public long FarmPrice {
             get {
                 return CalculatePrice(1100, Farm);
             }
         }
-        public double MinePrice {
+        public long MinePrice {
             get {
                 return CalculatePrice(12000, Mine);
             }
         }
-        public double FactoryPrice {
+        public long FactoryPrice {
             get {
                 return CalculatePrice(130000, Factory);
             }
         }
-        public double BankPrice {
+        public long BankPrice {
             get {
                 return CalculatePrice(1400000, Bank);
             }
         }
+        public decimal Cps {
+            get {
+                double fingerCps = Finger * 0.1;
+                double grandmaCps = Grandma * 1;
+                double farmCps = Farm * 8;
+                double mineCps = Mine * 47;
+                double factoryCps = Factory * 260;
+                double bankCps = Bank * 1400;
+                return (decimal)(fingerCps + grandmaCps + farmCps + mineCps + factoryCps + bankCps);
+            }
+        }
 
-        public Cookie(double cookies, double cps, int finger, int grandma, int farm, int mine, int factory, int bank) {
+        public ProgressionData(double cookies, int finger, int grandma, int farm, int mine, int factory, int bank) {
             Cookies = cookies;
-            Cps = cps;
             Finger = finger;
             Grandma = grandma;
             Farm = farm;
@@ -54,8 +63,9 @@ namespace CookieCount {
             Bank = bank;
         }
 
-        private static double CalculatePrice(int initialPrice, int amount) {
-            return initialPrice * Math.Pow(1.15, amount);
+        private static long CalculatePrice(int initialPrice, int amount) {
+            double unroundedNumber = initialPrice * Math.Pow(1.15, amount);
+            return (long)Math.Ceiling(unroundedNumber);
         }
 
         //all add 1 methodes

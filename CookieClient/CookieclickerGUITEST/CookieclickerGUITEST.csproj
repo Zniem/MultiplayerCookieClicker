@@ -74,7 +74,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CookieCount.cs" />
     <Compile Include="Forms\MainGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +87,7 @@
       <DependentUpon>TitleScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MainGame.resx">
       <DependentUpon>MainGame.cs</DependentUpon>

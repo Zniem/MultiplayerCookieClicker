@@ -7,9 +7,8 @@ namespace CookieServer {
     class Program {
         public static ProgressionData cookie;
         static List<String> players = new List<String>();
-        static FileStorage fs = new FileStorage();
         public static async Task Main(string[] args) {
-            await fs.LoadFromFile();
+            cookie = await FileStorage.LoadFromFile(FileStorage.path);
 
             TcpListener listener = new TcpListener(IPAddress.Any, 1330);
             listener.Start();
@@ -29,10 +28,9 @@ namespace CookieServer {
 
         private static async Task CookieCount() {
             while (true) {
-                cookie.Cookies = cookie.Cookies + (cookie.Finger * 0.1) + (cookie.Grandma * 1) + (cookie.Farm * 8) + (cookie.Mine * 47) + (cookie.Factory * 260) + (cookie.Bank * 1400);
+                cookie.Cookies = cookie.Cookies + (long)cookie.Cps;
                 await Task.Delay(1000);
-                cookie.Cps = (cookie.Finger * 0.1) + (cookie.Grandma * 1) + (cookie.Farm * 8) + (cookie.Mine * 47) + (cookie.Factory * 260) + (cookie.Bank * 1400);
-                await fs.SaveToFile();
+                await FileStorage.SaveToFile(FileStorage.path, cookie);
             }
         }
 

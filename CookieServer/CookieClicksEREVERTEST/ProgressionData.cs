@@ -2,7 +2,6 @@
     public struct ProgressionData {
         //all variables 
         public double Cookies { get; set; }
-        public double Cps { get; set; }
         public int Finger { get; set; }
         public int Grandma { get; set; }
         public int Farm { get; set; }
@@ -40,10 +39,20 @@
                 return CalculatePrice(1400000, Bank);
             }
         }
+        public decimal Cps {
+            get {
+                double fingerCps = Finger * 0.1;
+                double grandmaCps = Grandma * 1;
+                double farmCps = Farm * 8;
+                double mineCps = Mine * 47;
+                double factoryCps = Factory * 260;
+                double bankCps = Bank * 1400;
+                return (decimal)(fingerCps + grandmaCps + farmCps + mineCps + factoryCps + bankCps);
+            }
+        }
 
-        public ProgressionData(double cookies, double cps, int finger, int grandma, int farm, int mine, int factory, int bank) {
+        public ProgressionData(double cookies, int finger, int grandma, int farm, int mine, int factory, int bank) {
             Cookies = cookies;
-            Cps = cps;
             Finger = finger;
             Grandma = grandma;
             Farm = farm;

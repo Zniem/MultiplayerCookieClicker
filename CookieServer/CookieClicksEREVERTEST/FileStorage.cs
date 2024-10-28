@@ -1,21 +1,21 @@
 ﻿using System.Text.Json;
 
 namespace CookieServer {
-    internal class FileStorage {
-        String path = Environment.CurrentDirectory + "/CookieData.txt";
-        public async Task SaveToFile() {
-            FileCheckAndDelete(path);
-            WriteToFile(Program.cookie, path);
+    public class FileStorage {
+        public static readonly String path = Environment.CurrentDirectory + "/CookieData.txt";
+        public static async Task SaveToFile(String filePath, ProgressionData progressionData) {
+            FileCheckAndDelete(filePath);
+            WriteToFile(progressionData, filePath);
         }
 
-        public async Task LoadFromFile() {
-            FileCheckAndCreate(path);
-            String FileContent = ReadFileContent(path);
-            Program.cookie = JsonSerializer.Deserialize<ProgressionData>(FileContent);
+        public static async Task<ProgressionData> LoadFromFile(String filePath) {
+            FileCheckAndCreate(filePath);
+            String FileContent = ReadFileContent(filePath);
+            return JsonSerializer.Deserialize<ProgressionData>(FileContent);
         }
         public static Boolean FileCheckAndCreate(String path) {
             if (!File.Exists(path)) {
-                ProgressionData cookie = new ProgressionData(0, 0, 0, 0, 0, 0, 0, 0);
+                ProgressionData cookie = new ProgressionData(0, 0, 0, 0, 0, 0, 0);
                 WriteToFile(cookie, path);
                 return true;
             }
