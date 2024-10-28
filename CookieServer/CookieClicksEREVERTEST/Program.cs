@@ -10,7 +10,7 @@ namespace Test {
         static List<String> players = new List<String>();
         static FileStorage fs = new FileStorage();
         static async Task Main(string[] args) {
-            fs.LoadFromFile();
+            await fs.LoadFromFile();
 
 
             TcpListener listener = new TcpListener(IPAddress.Any, 1330);
@@ -24,26 +24,17 @@ namespace Test {
                 thread.Start(client);
                 Thread thread1 = new Thread(HandleIncomingMessages);
                 thread1.Start(client);
-                CookieCount();
+                await CookieCount();
             }
 
         }
 
-        private static void CookieCount() {
+        private static async Task CookieCount() {
             while (true) {
-                DateTime lastUpdate = DateTime.Now;
-                while (true)
-                {
-                    DateTime now = DateTime.Now;
-                    if (lastUpdate.Second <= now.Second)
-                    {
-                        Cookie.COOKIES = Cookie.COOKIES + (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
-                        Cookie.CPS = (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
-                        fs.SaveToFile();
-                    }
-
-                    lastUpdate = DateTime.Now;
-                }
+                Cookie.COOKIES = Cookie.COOKIES + (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
+                await Task.Delay(1000);
+                Cookie.CPS = (Cookie.FINGER * 0.1) + (Cookie.GRANDMA * 1) + (Cookie.FARM * 8) + (Cookie.MINE * 47) + (Cookie.FACTORY * 260) + (Cookie.BANK * 1400);
+                await fs.SaveToFile(); 
             }
         }
 
@@ -149,5 +140,7 @@ namespace Test {
             var stream = new StreamReader(client.GetStream(), Encoding.ASCII);
             return stream.ReadLine();
         }
+
     }
+
 }

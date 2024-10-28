@@ -4,14 +4,13 @@ using Test;
 namespace CookieClicksEREVERTEST {
     internal class FileStorage {
         String path = Environment.CurrentDirectory + "/CookieData.txt";
-        public void SaveToFile() {
+        public async Task SaveToFile() {
             FileCheckAndDelete(path);
             WriteToFile(Program.Cookie, path);
-
-
+            
         }
 
-        public void LoadFromFile() {
+        public async Task LoadFromFile() {
             if (FileCheckAndCreate(path)) {
             
             }
