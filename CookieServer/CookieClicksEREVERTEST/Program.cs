@@ -1,16 +1,14 @@
-﻿using CookieClicksEREVERTEST;
-using CookieCount;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 
-namespace Test {
+namespace CookieServer {
     class Program {
-        public static CookieCount.Cookie Cookie;
+        public static ProgressionData cookie;
         static List<String> players = new List<String>();
         static FileStorage fs = new FileStorage();
-         public static async Task Main(string[] args) {
+        public static async Task Main(string[] args) {
             await fs.LoadFromFile();
 
             TcpListener listener = new TcpListener(IPAddress.Any, 1330);
@@ -31,16 +29,16 @@ namespace Test {
 
         private static async Task CookieCount() {
             while (true) {
-                Cookie.Cookies = Cookie.Cookies + (Cookie.Finger * 0.1) + (Cookie.Grandma * 1) + (Cookie.Farm * 8) + (Cookie.Mine * 47) + (Cookie.Factory * 260) + (Cookie.Bank * 1400);
+                cookie.Cookies = cookie.Cookies + (cookie.Finger * 0.1) + (cookie.Grandma * 1) + (cookie.Farm * 8) + (cookie.Mine * 47) + (cookie.Factory * 260) + (cookie.Bank * 1400);
                 await Task.Delay(1000);
-                Cookie.Cps = (Cookie.Finger * 0.1) + (Cookie.Grandma * 1) + (Cookie.Farm * 8) + (Cookie.Mine * 47) + (Cookie.Factory * 260) + (Cookie.Bank * 1400);
+                cookie.Cps = (cookie.Finger * 0.1) + (cookie.Grandma * 1) + (cookie.Farm * 8) + (cookie.Mine * 47) + (cookie.Factory * 260) + (cookie.Bank * 1400);
                 await fs.SaveToFile();
             }
         }
 
         static void HandleOutgoingMessages(TcpClient tcpClient) {
             while (true) {
-                String Message = JsonSerializer.Serialize<CookieCount.Cookie>(Program.Cookie);
+                String Message = JsonSerializer.Serialize<ProgressionData>(cookie);
                 WriteTextMessage(tcpClient, Message);
                 foreach (String s in players) {
                     WriteTextMessage(tcpClient, "Player: " + s);
@@ -53,36 +51,36 @@ namespace Test {
             while (true) {
                 string msg = ReadTextMessage(tcpClient);
                 if (msg == "COOKIE") {
-                    Cookie.addcookies();
+                    cookie.addcookies();
                 } else if (msg == "FINGER") {
-                    if (Cookie.Cookies >= Cookie.FingerPrice) {
-                        Cookie.Cookies = Cookie.Cookies - (int)Cookie.FingerPrice;
-                        Cookie.addFinger();
+                    if (cookie.Cookies >= cookie.FingerPrice) {
+                        cookie.Cookies = cookie.Cookies - (int)cookie.FingerPrice;
+                        cookie.addFinger();
                     }
                 } else if (msg == "GRANDMA") {
-                    if (Cookie.Cookies >= Cookie.GrandmaPrice) {
-                        Cookie.Cookies = Cookie.Cookies - (int)Cookie.GrandmaPrice;
-                        Cookie.addGrandma();
+                    if (cookie.Cookies >= cookie.GrandmaPrice) {
+                        cookie.Cookies = cookie.Cookies - (int)cookie.GrandmaPrice;
+                        cookie.addGrandma();
                     }
                 } else if (msg == "FARM") {
-                    if (Cookie.Cookies >= Cookie.FingerPrice) {
-                        Cookie.Cookies = Cookie.Cookies - (int)Cookie.FarmPrice;
-                        Cookie.addFarm();
+                    if (cookie.Cookies >= cookie.FingerPrice) {
+                        cookie.Cookies = cookie.Cookies - (int)cookie.FarmPrice;
+                        cookie.addFarm();
                     }
                 } else if (msg == "MINE") {
-                    if (Cookie.Cookies >= Cookie.MinePrice) {
-                        Cookie.Cookies = Cookie.Cookies - (int)Cookie.MinePrice;
-                        Cookie.addMine();
+                    if (cookie.Cookies >= cookie.MinePrice) {
+                        cookie.Cookies = cookie.Cookies - (int)cookie.MinePrice;
+                        cookie.addMine();
                     }
                 } else if (msg == "FACTORY") {
-                    if (Cookie.Cookies >= Cookie.FactoryPrice) {
-                        Cookie.Cookies = Cookie.Cookies - (int)Cookie.FactoryPrice;
-                        Cookie.addFactory();
+                    if (cookie.Cookies >= cookie.FactoryPrice) {
+                        cookie.Cookies = cookie.Cookies - (int)cookie.FactoryPrice;
+                        cookie.addFactory();
                     }
                 } else if (msg == "BANK") {
-                    if (Cookie.Cookies >= Cookie.BankPrice) {
-                        Cookie.Cookies = Cookie.Cookies - (int)Cookie.BankPrice;
-                        Cookie.addBank();
+                    if (cookie.Cookies >= cookie.BankPrice) {
+                        cookie.Cookies = cookie.Cookies - (int)cookie.BankPrice;
+                        cookie.addBank();
                     }
                 } else if (msg.Contains("Player")) {
                     msg = msg.Substring(8);

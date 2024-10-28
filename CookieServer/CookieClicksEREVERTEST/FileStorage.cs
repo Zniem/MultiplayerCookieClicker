@@ -1,22 +1,21 @@
 ﻿using System.Text.Json;
-using Test;
 
- namespace CookieClicksEREVERTEST {
+namespace CookieServer {
     internal class FileStorage {
         String path = Environment.CurrentDirectory + "/CookieData.txt";
         public async Task SaveToFile() {
             FileCheckAndDelete(path);
-            WriteToFile(Program.Cookie, path);
+            WriteToFile(Program.cookie, path);
         }
 
         public async Task LoadFromFile() {
             FileCheckAndCreate(path);
             String FileContent = ReadFileContent(path);
-            Program.Cookie = JsonSerializer.Deserialize<CookieCount.Cookie>(FileContent);
+            Program.cookie = JsonSerializer.Deserialize<ProgressionData>(FileContent);
         }
         public static Boolean FileCheckAndCreate(String path) {
             if (!File.Exists(path)) {
-                CookieCount.Cookie cookie = new CookieCount.Cookie(0, 0, 0, 0, 0, 0, 0, 0);
+                ProgressionData cookie = new ProgressionData(0, 0, 0, 0, 0, 0, 0, 0);
                 WriteToFile(cookie, path);
                 return true;
             }
@@ -39,9 +38,9 @@ using Test;
             return fileContent;
         }
 
-        private static void WriteToFile(CookieCount.Cookie cookie, String path) {
+        private static void WriteToFile(ProgressionData cookie, String path) {
             using (StreamWriter sw = File.CreateText(path)) {
-                String patientString = JsonSerializer.Serialize<CookieCount.Cookie>(cookie);
+                String patientString = JsonSerializer.Serialize<ProgressionData>(cookie);
                 sw.WriteLine(patientString);
                 sw.Close();
             }
