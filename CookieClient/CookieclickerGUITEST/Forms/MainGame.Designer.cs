@@ -53,20 +53,20 @@ namespace CookieclickerGUITEST
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bauhaus 93", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(185, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(139, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 94);
+            this.label1.Size = new System.Drawing.Size(248, 76);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cookie";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CookieclickerGUITEST.Properties.Resources.Cookie_clonkker;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 289);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 235);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(541, 485);
+            this.pictureBox1.Size = new System.Drawing.Size(406, 394);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -76,10 +76,9 @@ namespace CookieclickerGUITEST
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bauhaus 93", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1488, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(1116, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(375, 94);
+            this.label2.Size = new System.Drawing.Size(301, 76);
             this.label2.TabIndex = 4;
             this.label2.Text = "Buildings";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -87,10 +86,9 @@ namespace CookieclickerGUITEST
             // GrandmaButton
             // 
             this.GrandmaButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrandmaButton.Location = new System.Drawing.Point(1513, 387);
-            this.GrandmaButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GrandmaButton.Location = new System.Drawing.Point(1135, 314);
             this.GrandmaButton.Name = "GrandmaButton";
-            this.GrandmaButton.Size = new System.Drawing.Size(360, 62);
+            this.GrandmaButton.Size = new System.Drawing.Size(270, 50);
             this.GrandmaButton.TabIndex = 5;
             this.GrandmaButton.Text = "Grandma";
             this.GrandmaButton.UseVisualStyleBackColor = true;
@@ -99,10 +97,9 @@ namespace CookieclickerGUITEST
             // FarmButton
             // 
             this.FarmButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FarmButton.Location = new System.Drawing.Point(1513, 564);
-            this.FarmButton.Margin = new System.Windows.Forms.Padding(4);
+            this.FarmButton.Location = new System.Drawing.Point(1135, 458);
             this.FarmButton.Name = "FarmButton";
-            this.FarmButton.Size = new System.Drawing.Size(360, 62);
+            this.FarmButton.Size = new System.Drawing.Size(270, 50);
             this.FarmButton.TabIndex = 6;
             this.FarmButton.Text = "Farm";
             this.FarmButton.UseVisualStyleBackColor = true;
@@ -111,10 +108,9 @@ namespace CookieclickerGUITEST
             // MineButton
             // 
             this.MineButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MineButton.Location = new System.Drawing.Point(1513, 712);
-            this.MineButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MineButton.Location = new System.Drawing.Point(1135, 578);
             this.MineButton.Name = "MineButton";
-            this.MineButton.Size = new System.Drawing.Size(360, 62);
+            this.MineButton.Size = new System.Drawing.Size(270, 50);
             this.MineButton.TabIndex = 7;
             this.MineButton.Text = "Mine";
             this.MineButton.UseVisualStyleBackColor = true;
@@ -123,10 +119,9 @@ namespace CookieclickerGUITEST
             // FactoryButton
             // 
             this.FactoryButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactoryButton.Location = new System.Drawing.Point(1513, 853);
-            this.FactoryButton.Margin = new System.Windows.Forms.Padding(4);
+            this.FactoryButton.Location = new System.Drawing.Point(1135, 693);
             this.FactoryButton.Name = "FactoryButton";
-            this.FactoryButton.Size = new System.Drawing.Size(360, 62);
+            this.FactoryButton.Size = new System.Drawing.Size(270, 50);
             this.FactoryButton.TabIndex = 8;
             this.FactoryButton.Text = "Factory";
             this.FactoryButton.UseVisualStyleBackColor = true;
@@ -135,10 +130,9 @@ namespace CookieclickerGUITEST
             // BankButton
             // 
             this.BankButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BankButton.Location = new System.Drawing.Point(1509, 1000);
-            this.BankButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BankButton.Location = new System.Drawing.Point(1132, 812);
             this.BankButton.Name = "BankButton";
-            this.BankButton.Size = new System.Drawing.Size(360, 62);
+            this.BankButton.Size = new System.Drawing.Size(270, 50);
             this.BankButton.TabIndex = 9;
             this.BankButton.Text = "Bank";
             this.BankButton.UseVisualStyleBackColor = true;
@@ -148,10 +142,9 @@ namespace CookieclickerGUITEST
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(759, 176);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(569, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(295, 38);
+            this.label3.Size = new System.Drawing.Size(242, 30);
             this.label3.TabIndex = 10;
             this.label3.Text = "Players Connected";
             // 
@@ -159,10 +152,9 @@ namespace CookieclickerGUITEST
             // 
             this.GrandmaLabel.AutoSize = true;
             this.GrandmaLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrandmaLabel.Location = new System.Drawing.Point(1537, 319);
-            this.GrandmaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GrandmaLabel.Location = new System.Drawing.Point(1153, 259);
             this.GrandmaLabel.Name = "GrandmaLabel";
-            this.GrandmaLabel.Size = new System.Drawing.Size(36, 38);
+            this.GrandmaLabel.Size = new System.Drawing.Size(28, 30);
             this.GrandmaLabel.TabIndex = 12;
             this.GrandmaLabel.Text = "0";
             // 
@@ -170,10 +162,9 @@ namespace CookieclickerGUITEST
             // 
             this.FarmLabel.AutoSize = true;
             this.FarmLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FarmLabel.Location = new System.Drawing.Point(1537, 491);
-            this.FarmLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FarmLabel.Location = new System.Drawing.Point(1153, 399);
             this.FarmLabel.Name = "FarmLabel";
-            this.FarmLabel.Size = new System.Drawing.Size(36, 38);
+            this.FarmLabel.Size = new System.Drawing.Size(28, 30);
             this.FarmLabel.TabIndex = 13;
             this.FarmLabel.Text = "0";
             // 
@@ -181,10 +172,9 @@ namespace CookieclickerGUITEST
             // 
             this.MineLabel.AutoSize = true;
             this.MineLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MineLabel.Location = new System.Drawing.Point(1537, 645);
-            this.MineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MineLabel.Location = new System.Drawing.Point(1153, 524);
             this.MineLabel.Name = "MineLabel";
-            this.MineLabel.Size = new System.Drawing.Size(36, 38);
+            this.MineLabel.Size = new System.Drawing.Size(28, 30);
             this.MineLabel.TabIndex = 14;
             this.MineLabel.Text = "0";
             // 
@@ -192,10 +182,9 @@ namespace CookieclickerGUITEST
             // 
             this.FactoryLabel.AutoSize = true;
             this.FactoryLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactoryLabel.Location = new System.Drawing.Point(1537, 794);
-            this.FactoryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FactoryLabel.Location = new System.Drawing.Point(1153, 645);
             this.FactoryLabel.Name = "FactoryLabel";
-            this.FactoryLabel.Size = new System.Drawing.Size(36, 38);
+            this.FactoryLabel.Size = new System.Drawing.Size(28, 30);
             this.FactoryLabel.TabIndex = 15;
             this.FactoryLabel.Text = "0";
             // 
@@ -203,20 +192,18 @@ namespace CookieclickerGUITEST
             // 
             this.BankLabel.AutoSize = true;
             this.BankLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BankLabel.Location = new System.Drawing.Point(1537, 945);
-            this.BankLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BankLabel.Location = new System.Drawing.Point(1153, 768);
             this.BankLabel.Name = "BankLabel";
-            this.BankLabel.Size = new System.Drawing.Size(36, 38);
+            this.BankLabel.Size = new System.Drawing.Size(28, 30);
             this.BankLabel.TabIndex = 16;
             this.BankLabel.Text = "0";
             // 
             // FingerButton
             // 
             this.FingerButton.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FingerButton.Location = new System.Drawing.Point(1513, 237);
-            this.FingerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.FingerButton.Location = new System.Drawing.Point(1135, 193);
             this.FingerButton.Name = "FingerButton";
-            this.FingerButton.Size = new System.Drawing.Size(360, 62);
+            this.FingerButton.Size = new System.Drawing.Size(270, 50);
             this.FingerButton.TabIndex = 17;
             this.FingerButton.Text = "Fingers";
             this.FingerButton.UseVisualStyleBackColor = true;
@@ -226,10 +213,9 @@ namespace CookieclickerGUITEST
             // 
             this.FingerLabel.AutoSize = true;
             this.FingerLabel.Font = new System.Drawing.Font("Bauhaus 93", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FingerLabel.Location = new System.Drawing.Point(1537, 174);
-            this.FingerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FingerLabel.Location = new System.Drawing.Point(1153, 141);
             this.FingerLabel.Name = "FingerLabel";
-            this.FingerLabel.Size = new System.Drawing.Size(36, 38);
+            this.FingerLabel.Size = new System.Drawing.Size(28, 30);
             this.FingerLabel.TabIndex = 18;
             this.FingerLabel.Text = "0";
             // 
@@ -237,27 +223,30 @@ namespace CookieclickerGUITEST
             // 
             this.CPSLabel.AutoSize = true;
             this.CPSLabel.Font = new System.Drawing.Font("Bauhaus 93", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPSLabel.Location = new System.Drawing.Point(267, 174);
+            this.CPSLabel.Location = new System.Drawing.Point(200, 141);
+            this.CPSLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPSLabel.Name = "CPSLabel";
-            this.CPSLabel.Size = new System.Drawing.Size(140, 48);
+            this.CPSLabel.Size = new System.Drawing.Size(115, 39);
             this.CPSLabel.TabIndex = 19;
             this.CPSLabel.Text = "label4";
+            this.CPSLabel.Click += new System.EventHandler(this.CPSLabel_Click);
             // 
             // PlayerLabel
             // 
             this.PlayerLabel.AutoSize = true;
             this.PlayerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.PlayerLabel.Location = new System.Drawing.Point(911, 260);
+            this.PlayerLabel.Location = new System.Drawing.Point(683, 211);
+            this.PlayerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PlayerLabel.Name = "PlayerLabel";
-            this.PlayerLabel.Size = new System.Drawing.Size(109, 39);
+            this.PlayerLabel.Size = new System.Drawing.Size(86, 31);
             this.PlayerLabel.TabIndex = 20;
             this.PlayerLabel.Text = "label4";
             // 
             // MainGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2226, 1090);
+            this.ClientSize = new System.Drawing.Size(1670, 864);
             this.Controls.Add(this.PlayerLabel);
             this.Controls.Add(this.CPSLabel);
             this.Controls.Add(this.FingerLabel);
@@ -276,7 +265,7 @@ namespace CookieclickerGUITEST
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainGame";
             this.Text = "Cookie Clicker";
             this.Load += new System.EventHandler(this.Form1_Load);

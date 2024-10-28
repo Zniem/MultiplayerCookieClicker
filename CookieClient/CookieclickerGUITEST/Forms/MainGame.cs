@@ -1,82 +1,49 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows.Forms;
 
-namespace CookieclickerGUITEST
-{
-    public partial class MainGame : Form
-    {
+namespace CookieclickerGUITEST {
+    public partial class MainGame : Form {
         List<String> players = new List<String>();
         String playerstring = "";
 
-        public MainGame()
-        {
+        public MainGame() {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
+        private void Form1_Load(object sender, EventArgs e) {
+
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = (10); 
+            timer.Interval = (10);
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
-        private void timer_Tick(object sender, EventArgs e)
-        {
+        private void timer_Tick(object sender, EventArgs e) {
             String msg = Program.ReadTextMessage(Program.client);
-            if (msg.Contains("Cookies")) {
-                label1.Text = msg;
-            }
-            else if (msg.Contains("CPS"))
-            {
-                CPSLabel.Text = msg;
-            }
-            else if (msg.Contains("Fingers"))
-            {
-                FingerLabel.Text = msg;
-            }
-            else if (msg.Contains("Grandmas"))
-            {
-                GrandmaLabel.Text = msg;
-            }
-            else if (msg.Contains("Farm"))
-            {
-                FarmLabel.Text = msg;
-            }
-            else if (msg.Contains("Mine"))
-            {
-                MineLabel.Text = msg;
-            }
-            else if (msg.Contains("Factory"))
-            {
-                FactoryLabel.Text = msg;
-            }
-            else if (msg.Contains("Bank"))
-            {
-                BankLabel.Text = msg;
-            }
-            else if (msg.Contains("Player")) {
-                if (players.Contains(msg))
-                {
+            if (msg.StartsWith("{") && msg.EndsWith("}")) {
+                CookieCount.Cookie cookie = JsonSerializer.Deserialize<CookieCount.Cookie>(msg);
+                label1.Text = $"{(int)cookie.Cookies}";
+                CPSLabel.Text = $"{cookie.Cps}";
+                FingerLabel.Text = $"amount {cookie.Finger} : price {(int)cookie.FingerPrice}";
+                GrandmaLabel.Text = $"amount {cookie.Grandma} : price {(int)cookie.GrandmaPrice}";
+                FarmLabel.Text = $"amount {cookie.Farm} : price {(int)cookie.FarmPrice}";
+                MineLabel.Text = $"amount {cookie.Mine} : price {(int)cookie.MinePrice}";
+                FactoryLabel.Text = $"amount {cookie.Factory} : price {(int)cookie.FactoryPrice}";
+                BankLabel.Text = $"amount {cookie.Bank} : price {(int)cookie.BankPrice}";
 
-                }
-                else { 
+
+            } else if (msg.Contains("Player")) {
+                if (players.Contains(msg)) {
+
+                } else {
                     players.Add(msg);
                     playerstring = playerstring + msg + "\n";
                     PlayerLabel.Text = playerstring;
                 }
-                
 
-                
+
+
             }
 
 
@@ -84,46 +51,46 @@ namespace CookieclickerGUITEST
         }
 
         //sending messages to server
-        
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+
+        private void pictureBox1_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "COOKIE");
 
         }
-        private void FingerButton_Click(object sender, EventArgs e)
-        {
+        private void FingerButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "FINGER");
         }
 
-        private void GrandmaButton_Click(object sender, EventArgs e)
-        {
+        private void GrandmaButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "GRANDMA");
         }
 
-        private void FarmButton_Click(object sender, EventArgs e)
-        {
+        private void FarmButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "FARM");
         }
 
-        private void MineButton_Click(object sender, EventArgs e)
-        {
+        private void MineButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "MINE");
         }
 
-        private void FactoryButton_Click(object sender, EventArgs e)
-        {
+        private void FactoryButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "FACTORY");
         }
-        private void BankButton_Click(object sender, EventArgs e)
-        {
+        private void BankButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "BANK");
         }
 
 
 
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        private void label2_Click(object sender, EventArgs e) {
+
+        }
+
+        private void CPSLabel_Click(object sender, EventArgs e) {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e) {
 
         }
     }

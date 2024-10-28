@@ -1,29 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CookieclickerGUITEST
-{
-    internal static class Program
-    {
-        public static TcpClient client { get; set; } = new TcpClient("192.168.2.10", 1330);
+namespace CookieclickerGUITEST {
+    internal static class Program {
+        public static TcpClient client { get; set; } = new TcpClient("192.168.1.104", 1330);
         //Start GUI
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
             //Start GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TitleScreen());
 
         }
-        public static void WriteTextMessage(TcpClient client, string message)
-        {
+        public static void WriteTextMessage(TcpClient client, string message) {
             var stream = new StreamWriter(client.GetStream(), Encoding.ASCII);
             {
                 stream.WriteLine(message);
@@ -31,8 +24,7 @@ namespace CookieclickerGUITEST
             }
         }
 
-        public static string ReadTextMessage(TcpClient client)
-        {
+        public static string ReadTextMessage(TcpClient client) {
             var stream = new StreamReader(client.GetStream(), Encoding.ASCII);
             {
                 return stream.ReadLine();

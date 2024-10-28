@@ -7,12 +7,12 @@ namespace CookieClicksEREVERTEST {
         public async Task SaveToFile() {
             FileCheckAndDelete(path);
             WriteToFile(Program.Cookie, path);
-            
+
         }
 
         public async Task LoadFromFile() {
             if (FileCheckAndCreate(path)) {
-            
+
             }
 
             String FileContent = ReadFileContent(path);
@@ -20,7 +20,7 @@ namespace CookieClicksEREVERTEST {
         }
         public static Boolean FileCheckAndCreate(String path) {
             if (!File.Exists(path)) {
-                CookieCount.Cookie cookie = new CookieCount.Cookie(0, 0, 0, 15, 0, 100, 0, 1100, 0, 12000, 0, 13000, 0, 1400000);
+                CookieCount.Cookie cookie = new CookieCount.Cookie(0, 0, 0, 0, 0, 0, 0, 0);
                 WriteToFile(cookie, path);
                 return true;
             }
