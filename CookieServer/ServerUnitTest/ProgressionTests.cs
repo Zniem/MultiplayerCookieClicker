@@ -11,6 +11,12 @@ namespace ServerUnitTest {
             return new ProgressionData(1, 1, 1, 1, 1, 1, 1, 1);
         }
 
+        public ProgressionData SetupProgressionAtOneHundred() {
+            return new ProgressionData(100, 100, 100, 100, 100, 100, 100, 100);
+        }
+
+        //price tests at zero
+
         [TestMethod]
         public void FingerPriceZeroFingersTest() {
             ProgressionData data = SetupProgressionAtZero();
@@ -48,6 +54,8 @@ namespace ServerUnitTest {
             Assert.AreEqual(1400000, data.BankPrice);
         }
 
+        //price tests at one
+
         [TestMethod]
         public void FingerPriceOneFingerTest() {
             ProgressionData data = SetupProgressionAtOne();
@@ -83,6 +91,44 @@ namespace ServerUnitTest {
         public void BankPriceOneBankTest() {
             ProgressionData data = SetupProgressionAtOne();
             Assert.AreEqual(1610000, data.BankPrice);
+        }
+
+        //price tests at one hundred
+        [TestMethod]
+        public void FingerPriceOneHundredFingersTest() {
+            ProgressionData data = SetupProgressionAtOneHundred();
+            Assert.AreEqual(17614702, data.FingerPrice);
+        }
+
+        [TestMethod]
+        public void GrandmaPriceOneHundredGrandmasTest() {
+            ProgressionData data = SetupProgressionAtOneHundred();
+            Assert.AreEqual(117431346, data.GrandmaPrice);
+        }
+
+        [TestMethod]
+        public void FarmPriceOneHundredFarmsTest() {
+            ProgressionData data = SetupProgressionAtOneHundred();
+            Assert.AreEqual(1291744796, data.FarmPrice);
+        }
+
+        [TestMethod]
+        public void MinePriceOneHundredMinesTest() {
+            ProgressionData data = SetupProgressionAtOneHundred();
+            Assert.AreEqual(14091761409, data.MinePrice);
+        }
+
+        [TestMethod]
+        public void FactoryPriceOneHundredFactoriesTest() {
+            ProgressionData data = SetupProgressionAtOneHundred();
+            Assert.AreEqual(152660748592, data.FactoryPrice);
+        }
+
+
+        [TestMethod]
+        public void BankPriceOneHundredBanksTest() {
+            ProgressionData data = SetupProgressionAtOneHundred();
+            Assert.AreEqual(1644038830981, data.BankPrice);
         }
     }
 }
