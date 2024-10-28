@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CookieclickerGUITEST {
     internal static class Program {
-        public static TcpClient client { get; set; } = new TcpClient("192.168.1.104", 1330);
+        public static TcpClient client { get; set; } = new TcpClient("192.168.2.10", 1330);
         //Start GUI
         [STAThread]
         static void Main() {

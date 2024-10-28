@@ -13,7 +13,6 @@ namespace CookieclickerGUITEST {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Interval = (10);
             timer.Tick += new EventHandler(timer_Tick);
@@ -23,15 +22,14 @@ namespace CookieclickerGUITEST {
             String msg = Program.ReadTextMessage(Program.client);
             if (msg.StartsWith("{") && msg.EndsWith("}")) {
                 CookieCount.Cookie cookie = JsonSerializer.Deserialize<CookieCount.Cookie>(msg);
-                label1.Text = $"{(int)cookie.Cookies}";
-                CPSLabel.Text = $"{cookie.Cps}";
+                label1.Text = $"Cookies: {(int)cookie.Cookies}";
+                CPSLabel.Text = $"CPS: {cookie.Cps}";
                 FingerLabel.Text = $"amount {cookie.Finger} : price {(int)cookie.FingerPrice}";
                 GrandmaLabel.Text = $"amount {cookie.Grandma} : price {(int)cookie.GrandmaPrice}";
                 FarmLabel.Text = $"amount {cookie.Farm} : price {(int)cookie.FarmPrice}";
                 MineLabel.Text = $"amount {cookie.Mine} : price {(int)cookie.MinePrice}";
                 FactoryLabel.Text = $"amount {cookie.Factory} : price {(int)cookie.FactoryPrice}";
                 BankLabel.Text = $"amount {cookie.Bank} : price {(int)cookie.BankPrice}";
-
 
             } else if (msg.Contains("Player")) {
                 if (players.Contains(msg)) {
@@ -41,20 +39,12 @@ namespace CookieclickerGUITEST {
                     playerstring = playerstring + msg + "\n";
                     PlayerLabel.Text = playerstring;
                 }
-
-
-
             }
-
-
-
         }
 
         //sending messages to server
-
         private void pictureBox1_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "COOKIE");
-
         }
         private void FingerButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "FINGER");
@@ -77,21 +67,6 @@ namespace CookieclickerGUITEST {
         }
         private void BankButton_Click(object sender, EventArgs e) {
             Program.WriteTextMessage(Program.client, "BANK");
-        }
-
-
-
-
-        private void label2_Click(object sender, EventArgs e) {
-
-        }
-
-        private void CPSLabel_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e) {
-
         }
     }
 }

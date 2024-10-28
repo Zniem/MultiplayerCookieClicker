@@ -1,20 +1,16 @@
 ﻿using System.Text.Json;
 using Test;
 
-namespace CookieClicksEREVERTEST {
+ namespace CookieClicksEREVERTEST {
     internal class FileStorage {
         String path = Environment.CurrentDirectory + "/CookieData.txt";
         public async Task SaveToFile() {
             FileCheckAndDelete(path);
             WriteToFile(Program.Cookie, path);
-
         }
 
         public async Task LoadFromFile() {
-            if (FileCheckAndCreate(path)) {
-
-            }
-
+            FileCheckAndCreate(path);
             String FileContent = ReadFileContent(path);
             Program.Cookie = JsonSerializer.Deserialize<CookieCount.Cookie>(FileContent);
         }
@@ -37,7 +33,6 @@ namespace CookieClicksEREVERTEST {
             using (StreamReader sr = new StreamReader(filePath)) {
                 while (!sr.EndOfStream) {
                     fileContent += sr.ReadLine();
-
                 }
                 sr.Close();
             }
@@ -50,8 +45,6 @@ namespace CookieClicksEREVERTEST {
                 sw.WriteLine(patientString);
                 sw.Close();
             }
-
         }
-
     }
 }
