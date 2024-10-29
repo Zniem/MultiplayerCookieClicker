@@ -7,46 +7,55 @@ namespace CookieServer {
     class Program {
         public static ProgressionData cookie;
         static List<String> players = new List<String>();
+        static DateTime lastUpdate = DateTime.Now;
+
         public static async Task Main(string[] args) {
             cookie = await FileStorage.LoadFromFile(FileStorage.path);
 
             TcpListener listener = new TcpListener(IPAddress.Any, 1330);
             listener.Start();
-
+            Console.WriteLine("Waiting for new connections");
             while (true) {
-                Console.WriteLine("Waiting for new connections");
-                TcpClient client = listener.AcceptTcpClient();
+                if (listener.Pending()) {
+                    TcpClient client = listener.AcceptTcpClient();
 
-                Thread OutgoingMessagesThread = new Thread(() => HandleOutgoingMessages(client));
-                Thread IncomingMessagesThread = new Thread(() => HandleIncomingMessages(client));
-                OutgoingMessagesThread.Start();
-                IncomingMessagesThread.Start();
+                    Thread OutgoingMessagesThread = new Thread(() => HandleOutgoingMessages(client));
+                    Thread IncomingMessagesThread = new Thread(() => HandleIncomingMessages(client));
+                    OutgoingMessagesThread.Start();
+                    IncomingMessagesThread.Start();
+                }
                 await CookieCount();
             }
-
         }
 
         private static async Task CookieCount() {
-            while (true) {
+
+            TimeSpan timeSinceLastUpdate = DateTime.Now - lastUpdate;
+            if (timeSinceLastUpdate.Seconds >= 1) {
                 cookie.Cookies = cookie.Cookies + (long)cookie.Cps;
-                await Task.Delay(1000);
                 await FileStorage.SaveToFile(FileStorage.path, cookie);
+
+                lastUpdate = DateTime.Now;
             }
+
         }
 
         static void HandleOutgoingMessages(TcpClient tcpClient) {
-            while (true) {
+            while (tcpClient.Connected) {
                 String Message = JsonSerializer.Serialize<ProgressionData>(cookie);
                 WriteTextMessage(tcpClient, Message);
-                foreach (String s in players) {
+
+                foreach (String s in players.ToList()) {
                     WriteTextMessage(tcpClient, "Player: " + s);
                     Thread.Sleep(5);
                 }
                 Thread.Sleep(5);
             }
         }
+
         static void HandleIncomingMessages(TcpClient tcpClient) {
-            while (true) {
+            String player = "";
+            while (tcpClient.Connected) {
                 string msg = ReadTextMessage(tcpClient);
                 if (msg == "COOKIE") {
                     cookie.addcookies();
@@ -81,11 +90,13 @@ namespace CookieServer {
                         cookie.addBank();
                     }
                 } else if (msg.Contains("Player")) {
-                    msg = msg.Substring(8);
-                    players.Add(msg);
+                    player = msg.Substring(8);
+                    players.Add(player);
                 }
 
             }
+
+            players.Remove(player);
         }
 
         public static void WriteTextMessage(TcpClient client, string message) {
